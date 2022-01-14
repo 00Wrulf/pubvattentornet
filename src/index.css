@@ -1,0 +1,243 @@
+html, body {
+  height: 100%;
+  margin:0;
+}
+
+body {
+  background-color: black;
+}
+
+h1, h2, p, ul, li {
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 100;
+  transition: all 0.1s;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header :nth-child(1) {
+  margin-right: auto;
+  width: 12vw;
+  padding: 1vw;
+}
+
+/* För höga tornet
+.header img {
+  filter: invert()
+}
+*/
+.header ul {
+  padding: 0;
+  overflow: hidden;
+}
+
+.header ul li {
+  color: #FFF;
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  font-size: 4vw;
+}
+
+.header ul li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 3vw !important;
+}
+
+div .welcomeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+}
+
+div .welcome {
+  display: flex;
+  margin-top: 2vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+div .welcome h1,p {
+  margin:0;
+  color: #FFF;
+}
+
+div .welcome h1 {
+  font-size: 10vw;
+  align-self: flex-end;
+  /*text-shadow: 0.3vw 0.3vw 2vw black;*/
+}
+
+div .welcome p {
+  font-family: 'Gill Sans';
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 3vw;
+  align-self: flex-end;
+
+}
+
+div .calendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-color: rgba(200, 200, 200, 0.3);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10vh;
+}
+
+
+.content h1, h2 {
+  color: white;
+  padding: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+.styret {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 30vh;
+  }
+
+.styret img {
+  width: 45vw;
+  border-radius: 1vw 1vw 1vw;
+}
+
+.confirmBookings{
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  justify-content: center;
+}
+
+.bookingsTable {
+  flex-wrap: wrap;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: middle;
+  background-color: bisque;
+  opacity: 0.9;
+  margin: 0 auto;
+  margin-bottom: 3vh;
+  height: 20%;
+}
+
+.bookingsTable td, th {
+  border-bottom: 1px solid white;
+  padding: 8px;
+}
+
+.bookingsTable thead th {
+  width: 25%;
+}
+
+.footer {
+  background-color: bisque;
+  opacity: 0.8;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-family: 'Mulish', regular;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.footer h4 {
+  padding-right: 2vw;
+  margin: 10px;
+}
+
+.footer .socialSymbol svg  {
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+.footer .loginSymbol svg {
+  padding-right: 10px;
+  position: absolute;
+  right:0;
+  cursor: pointer;
+}
+
+
+
+button {
+  background: orange;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+button:hover{
+  background: #bf1650;
+  transition: 0.3s all;
+}
+
+input[type="button"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+  .header ul li {
+    font-size: 7vw;
+  }
+
+  div .welcome {
+    margin-top: 25vh;
+  }
+
+  div .welcome h1 {
+    font-size: 13vw;
+  }
+
+  div .welcome p {
+    font-size: 4vw;
+  }
+  .styret {
+    min-height: 50vh;
+    justify-content: center;
+  }
+
+  .styret img {
+    width: 80vw;
+    border-radius: 1vw 1vw 1vw;
+  }
+
+  .bookingsTable td:nth-child(n+3):nth-child(-n+6), 
+                th:nth-child(n+3):nth-child(-n+6){
+    display:none;
+  }
+
+}
