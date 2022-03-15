@@ -4,8 +4,7 @@
 }
 
 .react-calendar {
-    width: 50vw;
-    max-width: 100%;
+    max-width: 50%;
     background: #fdefd2;
     border: 1px solid #a0a096;
     font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
@@ -125,5 +124,14 @@
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
   }
+
+
+  @media only screen and (max-width: 1000px) {
   
+    .react-calendar{
+      max-width:80%;
+    }
+  
+  }
+
   

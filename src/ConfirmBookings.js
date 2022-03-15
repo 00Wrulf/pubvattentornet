@@ -5,36 +5,48 @@ import TutorialDataService from './tutorial.service';
 import Popup from 'reactjs-popup';
 import BookingDetailsPopup from './BookingDetailsPopup';
 import Booking from './Booking';
+import VattentornetService from "./vattentornet.service";
+import { useCollection } from "react-firebase-hooks/firestore"
+import emailjs from '@emailjs/browser';
 
-function ConfirmBookings( bookings, {fU} ) {
+
+function ConfirmBookings( {confirmedBookings} ) {
 
     const [selectedBooking, setSelectedBooking] = useState([])
     const bookingDetailsPopup = useRef();
-
-
+    const [unConfirmedBookings, loadingUnconfirmedBookings, errorLoadingUnconfirmedBookings] = useCollection(
+        VattentornetService.getBookings().where("confirmed", "!=", true).orderBy("confirmed").orderBy("date"));
+      
     const closePopup = React.useCallback(() => {
         bookingDetailsPopup.current.close();
 
       });
     
-    const confirmBooking = (id) => {
-        TutorialDataService.confirmBookingRequest(id);
-    
+    const confirmBooking = (inId, inName, inEmail, inDate) => {
+        var emailTemplateParameters = {
+            name: inName,
+            email: inEmail,
+            date: format(inDate.toDate(), "yyyy-MM-dd")
+        };
+        TutorialDataService.confirmBookingRequest(inId);
+        emailjs.send('service_3hcqn6k', 'template_7wuv8yn', emailTemplateParameters, 'user_513JMnPUY4q9AaYbHnntm')
     }
     
 
-    const displayBookingDetails = (inName, inApartmentnr, inDescription, inBookpub, inEmail, inId) => {
+    const displayBookingDetails = (inDate, inName, inApartmentnr, inDescription, inBookpub, inEmail, inId, inConfirmed) => {
         setSelectedBooking({
+            date: inDate,
             name: inName,
             apartmentnr: inApartmentnr,
             description: inDescription,
             bookpub: inBookpub,
             email: inEmail,
-            id: inId
+            id: inId,
+            confirmed: inConfirmed
         });
         bookingDetailsPopup.current.open();
     }
-    
+    /*
     const DisplayData = bookings.unconfirmedBookedDates.map(
         (booking)=>{
             return(
@@ -51,27 +63,73 @@ function ConfirmBookings( bookings, {fU} ) {
             )
         }
     )
+    */
+
+    const tableHeadings = () => {
+        return(
+            <tr>
+            <th>Bokningen avser</th>
+            <th>Förfrågan skapades</th>
+            <th>Namn</th>
+            <th>Lägenhetsnr</th>
+            <th>Beskrivning</th>
+            <th>Bokat pub?</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+        )
+    }
+
     return(
         <div className="confirmBookings">
         <h1> Bokningsförfrågningar </h1>
         <table className="bookingsTable">
+            <caption><h3>Obekräftade bokningar</h3></caption>
             <thead>
-                <tr>
-                    <th>Datum</th>
-                    <th>Namn</th>
-                    <th>Lägenhetsnr</th>
-                    <th>Beskrivning</th>
-                    <th>Bokat pub?</th>
-                    <th>Email</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+                {tableHeadings()}
             </thead>
         <tbody>
-            {DisplayData}
+            {!loadingUnconfirmedBookings
+            && unConfirmedBookings
+            && unConfirmedBookings.docs.map((booking) => (
+                <tr key={booking.id}>
+                <td>{format(new Date(booking.data().date.toDate()), "yyyy-MM-dd")}</td>
+                <td>{format(new Date(booking.data().dateCreated.toDate()), "yy-MM-dd HH:mm")}</td>
+                <td>{booking.data().name}</td>
+                <td>{booking.data().apartmentnr}</td>
+                <td>{booking.data().description}</td>  
+                <td>{booking.data().bookpub ? <p>heej</p> : <p>neej</p>}</td>
+                <td>{booking.data().email}</td>
+                <td><button onClick={() => displayBookingDetails(booking.data().date, booking.data().name, booking.data().apartmentnr, booking.data().description, booking.data().bookpub, booking.data().email, booking.id, booking.data().confirmed)}>Visa bokning</button></td>
+                {!booking.data().confirmed && <td><button onClick={() => {confirmBooking(booking.id, booking.data().name, booking.data().email, booking.data().date)}}>Bekräfta bokning</button></td>}
+                </tr>
+            ))
+            }
         </tbody>
     </table>
-    <button onClick={() => {window.location.reload()}}></button>
+    <table className="bookingsTable">
+            <caption><h3>Bekräftade bokningar</h3></caption>
+            <thead>
+                {tableHeadings()}
+            </thead>
+        <tbody>
+            {confirmedBookings
+            && confirmedBookings.docs.map((booking) => (
+                <tr key={booking.id}>
+                <td>{format(new Date(booking.data().date.toDate()), "yyyy-MM-dd")}</td>
+                <td>{format(new Date(booking.data().dateCreated.toDate()), "yy-MM-dd HH:mm")}</td>
+                <td>{booking.data().name}</td>
+                <td>{booking.data().apartmentnr}</td>
+                <td>{booking.data().description}</td>  
+                <td>{booking.data().bookpub ? <p>heej</p> : <p>neej</p>}</td>
+                <td>{booking.data().email}</td>
+                <td><button onClick={() => displayBookingDetails(booking.data().date, booking.data().name, booking.data().apartmentnr, booking.data().description, booking.data().bookpub, booking.data().email, booking.id, booking.data().confirmed)}>Visa bokning</button></td>
+                </tr>
+            ))
+            }
+        </tbody>
+    </table>
     <Popup ref={bookingDetailsPopup}><BookingDetailsPopup selectedBooking={selectedBooking} closePopup={closePopup}/></Popup>
         </div>
     )

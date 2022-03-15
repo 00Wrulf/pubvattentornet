@@ -117,6 +117,7 @@ class TutorialDataService {
             description: inDescription,
             bookpub: inBookpub,
             date: inDate,
+            dateCreated: new Date(),
             confirmed: confirmed
         })
     }
@@ -130,12 +131,31 @@ class TutorialDataService {
         })
     }
 */
-    confirmBookingRequest(id){
-        db.collection("bookings").doc(id)
-        .update({
-            confirmed: true
-        })
-    }
+async updateBookingRequest(inId, inEmail, inName, inApartmentnr, inDescription, inBookpub, inDate){
+    console.log(inId,)
+    db.collection("bookings").doc(inId)
+    .update({
+        email: inEmail,
+        name: inName,
+        apartmentnr: inApartmentnr,
+        description: inDescription,
+        bookpub: inBookpub,
+        date: inDate,
+        confirmed: true
+    })
+}
+
+confirmBookingRequest(id){
+    db.collection("bookings").doc(id)
+    .update({
+        confirmed: true
+    })
+}
+
+deleteBooking(id){
+    db.collection("bookings").doc(id)
+    .delete();
+}
     /*
         .then(() => {
             console.log("Document successfully updated!");

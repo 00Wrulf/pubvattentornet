@@ -5,7 +5,7 @@ class Beer extends Component {
     render(){
         return(
             <div className="content">
-                asdf
+                <h2>Något om pubens öl? Synka med iZettle och visa lagret? Lägga in API från untapped? Oändliga möjligheter!</h2>
             </div>
         );
     }

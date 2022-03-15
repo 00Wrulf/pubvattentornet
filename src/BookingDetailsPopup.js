@@ -1,4 +1,5 @@
 import React, {Component, useEffect, useState} from 'react'
+import format from "date-fns/format"
 import ConfirmBookings from './ConfirmBookings';
 import { appendErrors, useForm } from "react-hook-form"
 import TutorialDataService from "./tutorial.service";
@@ -11,16 +12,18 @@ export default function BookingDetailsPopup({selectedBooking, closePopup}) {
     const [editForm, setEditForm] = useState(false);
 
     const onSubmit = (data) => {
-        if (editForm)
+        if (editForm){
+        let bookpub = data.bookpub ? true : false; // Ugly solution to fix checkbox returning undefined when false in form.
         TutorialDataService.updateBookingRequest(
+            selectedBooking.id,
             data.email, 
             data.name, 
             data.apartmentnr, 
             data.description,
-            data.bookpub,
-            new Date()
-        ).then(() => {setRequestSuccessful(true)})
-        .catch(() => {setRequestError(true)})
+            bookpub,
+            new Date(data.date),
+            )
+        }
         else {
             TutorialDataService.confirmBookingRequest(selectedBooking.id)
         }
@@ -29,9 +32,17 @@ export default function BookingDetailsPopup({selectedBooking, closePopup}) {
 if(!requestSuccessful && !requestError)
 return (
     <div className="popup">
+        {console.log(selectedBooking)}
         <p className="popupHeader">Bokningsförfrågan för {selectedBooking.name}</p>
         <hr></hr>
         <form onSubmit={handleSubmit(onSubmit)}>
+        <label>
+                Datum *
+                <input type="text" placeholder="Önskat datum" disabled={!editForm}
+                {...register("date", {
+                    required: "Obligatoriskt", value: format(new Date(selectedBooking.date.toDate()), "yyyy-MM-dd")
+                })}/>
+            </label>
           <label>
                 Mail *
                 <input type="email" placeholder="Din epostadress" disabled={!editForm}
@@ -65,11 +76,12 @@ return (
             </label>
             <label>
                 Boka puben? (Kryssa i denna om du vill ha pub-personal, till exempel för sektionspub)
-                <input type="checkbox" disabled={!editForm} checked={selectedBooking.bookpub}
-                {...register("bookpub",)}/>
+                <input type="checkbox" disabled={!editForm} defaultChecked={selectedBooking.bookpub}
+                {...register("bookpub", {value: selectedBooking.bookpub})}/>
             </label>
-            <button type="button" className="popupButton" onClick={() => setEditForm(true)}>Redigera bokning</button>
-            <input type="submit" value={!editForm ? "Bekräfta bokning" : "Uppdatera och bekräfta bokning"}/>
+            {!editForm && <button type="button" className="popupButton" onClick={() => setEditForm(true)}>Redigera bokning</button>}
+            {editForm && <input type="submit" value={"Uppdatera och bekräfta bokning"}/>}
+            <button type="button" className="popupButton" onClick={() => TutorialDataService.deleteBooking(selectedBooking.id)}>Ta bort bokning</button>
         </form>
     </div>
 )}

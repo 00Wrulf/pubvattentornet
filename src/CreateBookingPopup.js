@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
+import format from "date-fns/format"
 import Booking from './Booking'
 import { Button } from 'semantic-ui-react';
 import { appendErrors, useForm } from "react-hook-form"
 import TutorialDataService from "./tutorial.service";
+import emailjs from '@emailjs/browser';
 
 function CreateBookingPopup({clickedDate, receiveFormData}) {
     const {register, handleSubmit, errors} = useForm();
@@ -10,6 +12,11 @@ function CreateBookingPopup({clickedDate, receiveFormData}) {
     const [requestError, setRequestError] = useState(false);
 
     const onSubmit = (data) => {
+        var emailTemplateParameters = {
+            name: data.name,
+            email: data.email,
+            date: format(new Date(clickedDate), "yyyy-MM-dd")
+        };
         TutorialDataService.addBookingRequest(
             data.email, 
             data.name, 
@@ -17,7 +24,11 @@ function CreateBookingPopup({clickedDate, receiveFormData}) {
             data.description,
             data.bookpub,
             new Date(clickedDate)
-        ).then(() => {setRequestSuccessful(true)})
+        ).then(() => {
+            emailjs.send('service_3hcqn6k', 'template_68urrpo', emailTemplateParameters, 'user_513JMnPUY4q9AaYbHnntm').then(
+                setRequestSuccessful(true)
+            )
+        })
         .catch(() => {setRequestError(true)})
         }
 
@@ -26,7 +37,6 @@ function CreateBookingPopup({clickedDate, receiveFormData}) {
         <div className="popup">
             <p className="popupHeader">Bokningsförfrågan för {clickedDate}</p>
             <hr></hr>
-            {console.log(clickedDate)};
             <form onSubmit={handleSubmit(onSubmit)}>
               <label>
                     Mail *

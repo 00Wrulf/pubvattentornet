@@ -14,8 +14,11 @@ import 'reactjs-popup/dist/index.css';
 import './popup.css';
 import TutorialDataService from "./tutorial.service";
 import { useAuthState } from "react-firebase-hooks/auth";
+import VattentornetService from "./vattentornet.service";
 
 
+import { useCollection } from "react-firebase-hooks/firestore"
+import { BarChartRounded } from "@material-ui/icons";
 
 function Booking() {
 
@@ -37,6 +40,13 @@ function Booking() {
   const [confirmedBookedDates, setConfirmedBookedDates] = useState([]);
   const [unconfirmedBookedDates, setUnconfirmedBookedDates] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  var yesterday = new Date();
+  yesterday.setHours(-24);
+  yesterday.setDate(yesterday.getDate()-1); 
+  const [confirmedBookings, loadingConfirmedBookings, errorLoadingConfirmedBookings] = useCollection(
+  VattentornetService.getBookings().where("confirmed", "==", true).orderBy("date"));
+
+
 
   const reload = () => {
     setIsLoading(true);
@@ -69,15 +79,16 @@ function Booking() {
   useEffect(() => {
     const result = TutorialDataService.getConfirmedBookings();
     setConfirmedBookedDates(result);
-    console.log(result);
-
   }, [])
+
+
 
   // Funktion för att markera redan bokade datum i kalendern.
   // Jämför varje kalenderdatum med bokningsdatum från databasen
   // Ger vid träff den rutan ett klassnamn som kan nås via css.
   function markBookedDates({ date }) {
-    if (confirmedBookedDates.find(e => isSameDay(e.date, date))){
+
+    if (barray.find(e => isSameDay(e.date, date))){
       return 'dateIsBooked'
     }
 }
@@ -98,13 +109,13 @@ function Booking() {
     }
   }, [user])
 
-  
+  /*
   useEffect(() => {
     setTimeout(() => {
       forceUpdate();
     }, 1000)
   }, [isLoading]);
-
+*/
   
 
   // Lägger till valt datum i bokningen. useRef för att förhindra att denna körs vid första
@@ -152,14 +163,27 @@ function Booking() {
         if (date < Date.now()) return date; // Kan inte boka datum innan idag
         if (date.getDay() == 4) return date; // Kan inte boka torsdagar
         if(differenceInMonths(date, Date.now()) > 2) return date; // Kan inte boka längre än 2 månader fram i tiden
-        if (confirmedBookedDates.find(e => isSameDay(e.date, date))) return date;
+        if (barray.find(e => isSameDay(e.date, date))) return date;
 
         //return ((date < Date.now()) || (differenceInMonths(Date.now(), date) > 1));
     }
 
-    if(confirmedBookedDates.length > 1){
+    const barray = []
+    
     return (
       <div className="content">
+        {!loadingConfirmedBookings &&
+        confirmedBookings.docs.map((doc) => 
+        { barray.push({
+          "email": doc.data().email, 
+          "name": doc.data().name,
+          "apartmentnr": doc.data().apartmentnr,
+          "description": doc.data().description,
+          "bookpub": doc.data().bookpub,
+          "date": new Date(doc.data().date.toDate())
+          })}
+        )
+      }
         <Popup ref={ref}>
           <CreateBookingPopup clickedDate={format(date, "yyyy-MM-dd")} receiveFormData={receiveFormData}/>
         </Popup>
@@ -172,11 +196,9 @@ function Booking() {
           tileDisabled={tileDisabled}
         />
         </div>
-        {user ? <ConfirmBookings unconfirmedBookedDates={unconfirmedBookedDates} fU={fU} reload={reload}/> : ''}
+        {user && <ConfirmBookings confirmedBookings={confirmedBookings}/>}
     </div>
       )
-    }
-    else
-    return(<div><button onClick={fU}></button></div>)
+
 }
 export default Booking;
