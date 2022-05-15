@@ -1,23 +1,24 @@
 import React, {useState} from 'react'
 import format from "date-fns/format"
-import Booking from './Booking'
-import { Button } from 'semantic-ui-react';
-import { appendErrors, useForm } from "react-hook-form"
-import TutorialDataService from "./tutorial.service";
+import { useForm } from "react-hook-form"
 import emailjs from '@emailjs/browser';
+import VattentornetDataService from "../../services/vattentornet.service";
 
-function CreateBookingPopup({clickedDate, receiveFormData}) {
-    const {register, handleSubmit, errors} = useForm();
+function CreateBookingRequest({clickedDate, closePopup}) {
+    const {register, handleSubmit} = useForm();
     const [requestSuccessful, setRequestSuccessful] = useState(false);
     const [requestError, setRequestError] = useState(false);
 
     const onSubmit = (data) => {
+        // Fyller i variabler för att maila den som bokar
         var emailTemplateParameters = {
             name: data.name,
             email: data.email,
             date: format(new Date(clickedDate), "yyyy-MM-dd")
         };
-        TutorialDataService.addBookingRequest(
+
+        // Lägger till bokningen som obekräftat i databasen (confirmed=false, unless specified)
+        VattentornetDataService.addBookingRequest(
             data.email, 
             data.name, 
             data.apartmentnr, 
@@ -25,13 +26,14 @@ function CreateBookingPopup({clickedDate, receiveFormData}) {
             data.bookpub,
             new Date(clickedDate)
         ).then(() => {
-            emailjs.send('service_3hcqn6k', 'template_68urrpo', emailTemplateParameters, 'user_513JMnPUY4q9AaYbHnntm').then(
+            emailjs.send('service_y6c7ucc', 'template_68urrpo', emailTemplateParameters, process.env.REACT_APP_EMAILJS_PUBLIC_KEY).then(
                 setRequestSuccessful(true)
             )
         })
         .catch(() => {setRequestError(true)})
         }
 
+    // Visa ej form om request har skickats iväg och är successful
     if(!requestSuccessful && !requestError)
     return (
         <div className="popup">
@@ -44,7 +46,7 @@ function CreateBookingPopup({clickedDate, receiveFormData}) {
                     {...register("email", {
                         required: "Obligatoriskt",
                         pattern: {
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, //regexp används för att bestämma formen på en mailadress.
                             message: "Ogiltig emailadress"
                         }
                     })} 
@@ -75,16 +77,19 @@ function CreateBookingPopup({clickedDate, receiveFormData}) {
                 </label>
                 <input type="submit" value="Skicka!"/>
             </form>
+            <button type="button" className="popupButton" onClick={() => closePopup()}>Stäng</button>
         </div>
     )
+
     if(requestSuccessful)
     return(
         <p style={{color: 'black'}}>Bokningsförfrågan skickad. En kopia på din förfrågan skickas till angiven mailadress och där får du även svar på din förfrågan.</p>
     )
+    
     if(requestError)
     return(
         <p style={{color: 'red'}}>Något gick fel!</p>
     )
 }
 
-export default CreateBookingPopup;
+export default CreateBookingRequest;

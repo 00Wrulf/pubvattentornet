@@ -1,29 +1,24 @@
-import React, {Component, useEffect, useState} from 'react'
-import Main from './Main'
-import { Button } from 'semantic-ui-react'
-import { appendErrors, useForm } from "react-hook-form"
-import PropTypes from 'prop-types'
-import axios from "axios";
-
-import TutorialDataService from "./tutorial.service";
+import React, { useEffect } from 'react'
+import { useForm } from "react-hook-form"
+import VattentornetDataService from "../../services/vattentornet.service";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-
-export default function LoginPopup({setToken, closePopup}) {
+export default function LoginPopup({closePopup}) {
 
     const {register, handleSubmit, setError, formState: { errors } } = useForm();
     
-   
     const onSubmit = (data) => {
-        TutorialDataService.signInWithEmailAndPassword(data.email, data.password);
-      }
+        //TODO: Lägg in error handling om användaren inte finns i DB
+        VattentornetDataService.login(data.email, data.password)
+    }
 
+    // Felhantering för felaktigt formaterad mail
     const onError = (errors) => {
-        setError("customError", { type: "server side", message: "Felaktig email eller lösenord."});
+        setError("customError", { type: "server side", message: "Felaktig email"});
         console.log("neee");
     }
 
-    const [user, loading, error] = useAuthState(TutorialDataService.auth);
+    const [user, loading] = useAuthState(VattentornetDataService.auth);
 
     useEffect(() => {
         if (loading) {
@@ -33,7 +28,7 @@ export default function LoginPopup({setToken, closePopup}) {
         if(user) {
             closePopup();
         }
-    }, [user, loading]);
+    }, [user, loading]); 
     
     return (
         <div className="popup">
@@ -57,7 +52,7 @@ export default function LoginPopup({setToken, closePopup}) {
                 <label>
                     Lösenord *
                     <input 
-                        type="text" 
+                        type="password" 
                         placeholder="Lösenord"
                         {...register("password", {
                         required: "Obligatoriskt"
@@ -66,11 +61,6 @@ export default function LoginPopup({setToken, closePopup}) {
                 <p style={{color: 'red'}}>{errors.customError?.message}</p>
                 <input type="submit" value="Logga in"/>
             </form>
-
         </div>
     )
-}
-
-LoginPopup.propTypes = {
-    setToken: PropTypes.func.isRequired
 }

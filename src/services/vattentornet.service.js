@@ -1,42 +1,35 @@
-import { differenceInBusinessDays } from 'date-fns';
-import {firebase} from './firebase'
+import {firebase} from '../firebase'
 
 const db = firebase.firestore();
 
 
-class TutorialDataService {
+class VattentornetDataService {
 
+    // Built-in authorization functionality within firebase.
+    // Admins can be managed via the dashboard
+    // Inbyggd funktionalitet 
     auth = firebase.auth();
     
-    add(){
-        db.collection("users").add({
-            first: "nosse",
-            last: "yobo",
-            born: 1815
-        });
-    }
+    // Funktionalitet för att hämta alla admins. Kanske bra för något?
+    // getAllUsers(){
+    //     let list = [];
+    //     db.collection("users").get().then((querySnapshot) => {
+    //         querySnapshot.forEach((doc) => {
+    //             list.push(doc.data().first);
+    //         });
+    //     });
+    //     return list;
+    // }
 
-    getAll(){
-        let list = [];
-        db.collection("users").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                list.push(doc.data().first);
-            });
-        });
-        return list;
-    }
-
-    async signInWithEmailAndPassword(email, password){
+    async login(email, password){
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Signed in
-            var user = userCredential.user;
-            console.log("YAS!")
+            //var user = userCredential.user;
         })
         .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log("NAS!")
+            //var errorCode = error.code;
+            //var errorMessage = error.message;
         });
     }
 
@@ -44,22 +37,25 @@ class TutorialDataService {
         firebase.auth().signOut();
     }
 
-    authe(){
+    userAuthorization(){
         firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-          var uid = user.uid;
-          console.log("authed!")
+          //var uid = user.uid;
         } else {
           // User is signed out
-          console.log("not authed!")
         }
       });
     }
 
+    getBookings = () =>{
+        return db.collection("bookings");
+    }
+
+
+
     getConfirmedBookings(){
-        let counter = 0;
         let confirmedBookings = [];
         db.collection("bookings").where("confirmed", "==", true)
             .get()
@@ -122,50 +118,41 @@ class TutorialDataService {
         })
     }
 
+    async updateBookingRequest(inId, inEmail, inName, inApartmentnr, inDescription, inBookpub, inDate){
+        console.log(inId,)
+        db.collection("bookings").doc(inId)
+        .update({
+            email: inEmail,
+            name: inName,
+            apartmentnr: inApartmentnr,
+            description: inDescription,
+            bookpub: inBookpub,
+            date: inDate,
+            confirmed: true
+        })
+    }
+
+    confirmBookingRequest(id){
+        db.collection("bookings").doc(id)
+        .update({
+            confirmed: true
+        })
+    }
+
+    deleteBooking(id){
+        db.collection("bookings").doc(id)
+        .delete();
+    }
         /*
-        .then((docRef) => {
-            console.log("Booking made with ID: ", docRef.id)
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        })
-    }
-*/
-async updateBookingRequest(inId, inEmail, inName, inApartmentnr, inDescription, inBookpub, inDate){
-    console.log(inId,)
-    db.collection("bookings").doc(inId)
-    .update({
-        email: inEmail,
-        name: inName,
-        apartmentnr: inApartmentnr,
-        description: inDescription,
-        bookpub: inBookpub,
-        date: inDate,
-        confirmed: true
-    })
-}
-
-confirmBookingRequest(id){
-    db.collection("bookings").doc(id)
-    .update({
-        confirmed: true
-    })
-}
-
-deleteBooking(id){
-    db.collection("bookings").doc(id)
-    .delete();
-}
-    /*
-        .then(() => {
-            console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-            console.error("Error updating document: ", error);
-        })
-    }
-    */
+            .then(() => {
+                console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+                console.error("Error updating document: ", error);
+            })
+        }
+        */
 }
 
 
-export default new TutorialDataService();
+export default new VattentornetDataService();

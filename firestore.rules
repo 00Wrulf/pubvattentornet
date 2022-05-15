@@ -1,9 +1,26 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if
-          request.time < timestamp.date(2022, 2, 7);
+    match /bookings/{document} {
+      allow read: if true
+      allow write: if resource == null
+      allow write, update: if request.auth != null
+    }
+    match /users/{document} {
+      allow read, write: if request.auth != null
     }
   }
 }
+
+// TODO: Simpla säkerhetsregler. Kan förbättras.
+// Just nu: 
+// Icke inloggade får bara skriva nytt till bookings databasen,
+// ej uppdatera. Tekniskt sett kan icke inloggade då inte göra sin egen bokning till confirmed.
+
+// Inloggade får skriva OCH uppdatera.
+
+// Icke inloggade får inte ha något med användar-databasen att göra.
+
+// Möjligen bör extra säkerhet sättas på att icke användare inte read access till hela 
+// bookings men bara datum? Tekniskt sett så är detta ändå låst i JS-koden 
+// men vet inte om überhaxxors kanske kan bypassa detta

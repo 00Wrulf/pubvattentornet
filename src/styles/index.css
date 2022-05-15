@@ -21,17 +21,13 @@ h1, h2, h3, p, ul, li {
   align-items: center;
 }
 
+/* Logo */
 .header :nth-child(1) {
   margin-right: auto;
   width: 12vw;
   padding: 1vw;
 }
 
-/* För höga tornet
-.header img {
-  filter: invert()
-}
-*/
 .header ul {
   padding: 0;
   overflow: hidden;
@@ -52,6 +48,27 @@ h1, h2, h3, p, ul, li {
   padding: 3vw !important;
 }
 
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10vh;
+}
+
+
+.content h1, h2 {
+  font-family: Mulish;
+  font-weight: bold;
+  color: white;
+  padding: 1vw;
+  text-align: center;
+  font-size: 4vw;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
 div .welcomeContainer{
   display: flex;
   flex-direction: column;
@@ -66,7 +83,7 @@ div .welcome {
   align-items: center;
 }
 
-div .welcome h1,p {
+div .welcome h1, p {
   margin:0;
   color: #FFF;
 }
@@ -74,7 +91,6 @@ div .welcome h1,p {
 div .welcome h1 {
   font-size: 10vw;
   align-self: flex-end;
-  /*text-shadow: 0.3vw 0.3vw 2vw black;*/
 }
 
 div .welcome p {
@@ -113,7 +129,9 @@ div .about h2{
 
 div .pubInfo{
   background-color: rgba(255,228,196, .8);
-  margin: 5vw;
+  margin-top: 2vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   padding: 2vw;
 }
 
@@ -121,29 +139,6 @@ div .calendar {
   width: 100%;
   display: flex;
   justify-content: center;
-}
-
-.content {
-  background-color: rgba(200, 200, 200, 0.3);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top:5vh;
-  padding-bottom: 10vh;
-}
-
-
-.content h1, h2 {
-  font-family: Mulish;
-  font-weight: bold;
-  color: white;
-  padding: 1vw;
-  text-align: center;
-  font-size: 4vw;
-}
-
-.content li {
-  margin-bottom: 10px;
 }
 
 .styret {
@@ -189,6 +184,11 @@ div .calendar {
   overflow: auto;
 }
 
+/* Hide scrollbar on checkbox */
+.bookingsTable :nth-child(6) {
+  overflow: hidden;
+}
+
 .bookingsTable thead th {
   width: 25%;
 }
@@ -198,7 +198,6 @@ div .calendar {
   font-weight: bold;
   color: white;
 }
-
 
 .footer {
   background-color: bisque;
@@ -230,8 +229,6 @@ div .calendar {
   cursor: pointer;
 }
 
-
-
 button {
   background: orange;
   color: white;
@@ -256,11 +253,26 @@ input[type="button"]:active {
 }
 
 
-
 @media only screen and (max-width: 1000px) {
 
+  /* Menu items */
   .header ul li {
-    font-size: 7vw;
+    font-size: 8vw;
+  }
+
+  /* Logo */
+  .header :nth-child(1) {
+    margin-right: auto;
+    width: 15vw;
+    padding: 1vw;
+  }
+
+  .content {
+    padding-bottom: 30vh;
+  }
+
+  .content h1 {
+    font-size: 10vw;
   }
 
   div .welcome {
@@ -274,8 +286,9 @@ input[type="button"]:active {
   div .welcome p {
     font-size: 4vw;
   }
+  
   .styret {
-    min-height: 50vh;
+    min-height: 40vh;
     justify-content: center;
   }
 
@@ -285,7 +298,22 @@ input[type="button"]:active {
   }
 
   div .about p{
-    font-size: 2vw;
+    font-size: 4vw;
+  }
+
+  div .about h1 {
+    font-size: 5vw;
+  }
+
+  div .about h2 {
+    font-size: 5vw;
+  }
+
+  div .pubInfo{
+    background-color: rgba(255,228,196, .8);
+    margin: 5vw;
+    padding: 2vw;
+    
   }
 
   .bookingsTable td, th{
@@ -293,7 +321,7 @@ input[type="button"]:active {
     overflow: hidden;
     padding: 1vw;
     text-align: center;
-    font-size: 2.2vw;
+    font-size: 2.3vw;
   }
 
   .bookingsTable td:nth-child(n+2):nth-child(-n+6), 

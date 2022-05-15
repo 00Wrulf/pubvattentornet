@@ -1,37 +1,39 @@
-import React, {useState, useRef, useEffect, useReducer} from 'react'
+import React, {useState, useRef} from 'react'
 import format from "date-fns/format"
-import axios from "axios";
-import TutorialDataService from './tutorial.service';
+import VattentornetDataService from '../services/vattentornet.service';
 import Popup from 'reactjs-popup';
-import BookingDetailsPopup from './BookingDetailsPopup';
-import Booking from './Booking';
-import VattentornetService from "./vattentornet.service";
+import BookingDetails from './popups/ShowBookingDetails';
+import VattentornetService from "../services/vattentornet.service";
 import { useCollection } from "react-firebase-hooks/firestore"
 import emailjs from '@emailjs/browser';
 
+//TODO: Fixa tornet service
 
-function ConfirmBookings( {confirmedBookings} ) {
+function ShowBookingRequests( {confirmedBookings} ) {
 
     const [selectedBooking, setSelectedBooking] = useState([])
     const bookingDetailsPopup = useRef();
-    const [unConfirmedBookings, loadingUnconfirmedBookings, errorLoadingUnconfirmedBookings] = useCollection(
+
+    // Lite av en fuling som kör databas requesten rätt i hooken, men lite busig får man väl vara. (jk, gör detta helst i firebase.js)
+    const [unConfirmedBookings, loadingUnconfirmedBookings] = useCollection(
         VattentornetService.getBookings().where("confirmed", "!=", true).orderBy("confirmed").orderBy("date"));
       
+    // Functionalitet för att stänga popupfönstret
     const closePopup = React.useCallback(() => {
         bookingDetailsPopup.current.close();
+      }, []);
 
-      });
     
+    // Ändrar bokningens status i databasen till confirmed och mailar den som bokade att bokningen är godkänd
     const confirmBooking = (inId, inName, inEmail, inDate) => {
         var emailTemplateParameters = {
             name: inName,
             email: inEmail,
             date: format(inDate.toDate(), "yyyy-MM-dd")
         };
-        TutorialDataService.confirmBookingRequest(inId);
-        emailjs.send('service_3hcqn6k', 'template_7wuv8yn', emailTemplateParameters, 'user_513JMnPUY4q9AaYbHnntm')
+        VattentornetDataService.confirmBookingRequest(inId);
+        emailjs.send('service_y6c7ucc', 'template_7wuv8yn', emailTemplateParameters, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
     }
-    
 
     const displayBookingDetails = (inDate, inName, inApartmentnr, inDescription, inBookpub, inEmail, inId, inConfirmed) => {
         setSelectedBooking({
@@ -46,25 +48,8 @@ function ConfirmBookings( {confirmedBookings} ) {
         });
         bookingDetailsPopup.current.open();
     }
-    /*
-    const DisplayData = bookings.unconfirmedBookedDates.map(
-        (booking)=>{
-            return(
-                <tr key={booking.id}>
-                        <td>{format(new Date(booking.date), "yyyy-MM-dd")}</td>
-                        <td>{booking.name}</td>
-                        <td>{booking.apartmentnr}</td>
-                        <td>{booking.description}</td>  
-                        <td>{booking.bookpub ? <p>heej</p> : <p>neej</p>}</td>
-                        <td>{booking.email}</td>
-                        <td><button onClick={() => {confirmBooking(booking.id)}}>Bekräfta</button></td>
-                        <td><button onClick={() => displayBookingDetails(booking.name, booking.apartmentnr, booking.description, booking.bookpub, booking.email, booking.id)}>Visa bokning</button></td>
-                </tr>
-            )
-        }
-    )
-    */
 
+    // Flyttar ut konstanter för att minska kod-klutter i return()
     const tableHeadings = () => {
         return(
             <tr>
@@ -90,8 +75,8 @@ function ConfirmBookings( {confirmedBookings} ) {
                 {tableHeadings()}
             </thead>
         <tbody>
+            {/*Fyller tabell med OBEKRÄFTADE bokningar*/}
             {!loadingUnconfirmedBookings
-            && unConfirmedBookings
             && unConfirmedBookings.docs.map((booking) => (
                 <tr key={booking.id}>
                 <td>{format(new Date(booking.data().date.toDate()), "yyyy-MM-dd")}</td>
@@ -99,21 +84,22 @@ function ConfirmBookings( {confirmedBookings} ) {
                 <td>{booking.data().name}</td>
                 <td>{booking.data().apartmentnr}</td>
                 <td>{booking.data().description}</td>  
-                <td>{booking.data().bookpub ? <p>heej</p> : <p>neej</p>}</td>
+                <td>{booking.data().bookpub ? <input type="checkbox" checked disabled/> : <input type="checkbox" disabled/>}</td>
                 <td>{booking.data().email}</td>
                 <td><button onClick={() => displayBookingDetails(booking.data().date, booking.data().name, booking.data().apartmentnr, booking.data().description, booking.data().bookpub, booking.data().email, booking.id, booking.data().confirmed)}>Visa bokning</button></td>
                 {!booking.data().confirmed && <td><button onClick={() => {confirmBooking(booking.id, booking.data().name, booking.data().email, booking.data().date)}}>Bekräfta bokning</button></td>}
                 </tr>
-            ))
+                ))
             }
         </tbody>
     </table>
     <table className="bookingsTable">
-            <caption><h3>Bekräftade bokningar</h3></caption>
-            <thead>
-                {tableHeadings()}
-            </thead>
+        <caption><h3>Bekräftade bokningar</h3></caption>
+        <thead>
+            {tableHeadings()}
+        </thead>
         <tbody>
+            {/*Fyller tabell med BEKRÄFTADE bokningar*/}
             {confirmedBookings
             && confirmedBookings.docs.map((booking) => (
                 <tr key={booking.id}>
@@ -122,51 +108,17 @@ function ConfirmBookings( {confirmedBookings} ) {
                 <td>{booking.data().name}</td>
                 <td>{booking.data().apartmentnr}</td>
                 <td>{booking.data().description}</td>  
-                <td>{booking.data().bookpub ? <p>heej</p> : <p>neej</p>}</td>
+                <td>{booking.data().bookpub ? <input type="checkbox" checked disabled/> : <input type="checkbox" disabled/>}</td>
                 <td>{booking.data().email}</td>
                 <td><button onClick={() => displayBookingDetails(booking.data().date, booking.data().name, booking.data().apartmentnr, booking.data().description, booking.data().bookpub, booking.data().email, booking.id, booking.data().confirmed)}>Visa bokning</button></td>
                 </tr>
-            ))
+                ))
             }
         </tbody>
     </table>
-    <Popup ref={bookingDetailsPopup}><BookingDetailsPopup selectedBooking={selectedBooking} closePopup={closePopup}/></Popup>
+    <Popup ref={bookingDetailsPopup}><BookingDetails selectedBooking={selectedBooking} closePopup={closePopup}/></Popup>
         </div>
     )
  }
-/*
 
-
-    return (
-        <div className="ConfirmBookings">
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="2"> Obekräftade bokningar </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Email</td>
-                        <td>Name</td>
-                        <td>Lägenhetsnr</td>
-                        <td>Beskrivning</td>
-                        <td>Bokat pub</td>
-                        <td>Beskrivning</td>
-                    </tr>
-                {bookings.unconfirmedBookedDates.map((booking) =>
-                        <td>{booking.email}</td> +
-                        <td>{booking.name}</td> +
-                        <td>{booking.apartmentnr}</td> +
-                        <td>{booking.description}</td> +
-                        <td>{booking.bookpub}</td> +
-                        <td>{booking.date}</td>
-                        )}
-                </tbody>
-            </table>
-        </div>
-    )
-
-}
-*/
-export default ConfirmBookings;
+export default ShowBookingRequests;

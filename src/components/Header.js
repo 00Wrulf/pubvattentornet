@@ -1,26 +1,15 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom"
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
 import Home from "./Home"
-import Content from "./Content"
 import Puben from "./Puben"
 import Booking from "./Booking"
 import Beer from "./Beer"
-import Admin from './Admin'
-import logo from "./images/logo/logoRound.png"
-import TutorialDataService from "./tutorial.service";
+import logo from "../images/logo/logoRound.png"
+import VattentornetDataService from "../services/vattentornet.service";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const homeStyle = {
-    backgroundColor: 'blue',
-}
-
-const contentStyle = {
-    backgroundColor: 'yellow',
-}
-
 function Header() {
-    const [user, loading, error] = useAuthState(TutorialDataService.auth);
-    let home = false
+    const [user] = useAuthState(VattentornetDataService.auth);
     return(
         <Router>
                 <div className="header">

@@ -5,32 +5,22 @@ import "firebase/compat/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// API secrets som accessas från .env filen. OBS att om ändringar görs i .env filen
+// behövs en omstart (npm start).
 const firebaseConfig = {
-  apiKey: "AIzaSyCNp7uhJaK9m39LaCq-K0h_0co1RcvT2eI",
-  authDomain: "pubvattentornet-aaf7c.firebaseapp.com",
-  projectId: "pubvattentornet-aaf7c",
-  storageBucket: "pubvattentornet-aaf7c.appspot.com",
-  messagingSenderId: "895605229680",
-  appId: "1:895605229680:web:becdef2871930c46650cb5",
-  measurementId: "G-GH103J6F7T"
+  apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_FIREBASE_AUTH_DOMAIN}`,
+  projectId: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID}`,
+  appId: `${process.env.REACT_APP_FIREBASE_APP_ID}`,
+  measurementId: `${process.env.REACT_APP_FIREBASE_MEASUREMENT_ID}`,
 };
+
+console.log(process.env.REACT_APP_TEST);
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//export const auth = firebase.auth();
-
 export{firebase}
-
-/*
-const entry = doc(db, 'test')
-
-function writeDoc() {
-  const docData = {
-    Beer: 'Bärz'
-  };
-  addDoc(entry, docData);
-}
-*/

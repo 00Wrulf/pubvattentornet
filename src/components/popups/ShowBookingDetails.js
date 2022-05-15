@@ -1,49 +1,48 @@
-import React, {Component, useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import format from "date-fns/format"
-import ConfirmBookings from './ConfirmBookings';
-import { appendErrors, useForm } from "react-hook-form"
-import TutorialDataService from "./tutorial.service";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form"
+import VattentornetDataService from "../../services/vattentornet.service";
 
-export default function BookingDetailsPopup({selectedBooking, closePopup}) {    
-    const {register, handleSubmit, errors} = useForm();
-    const [requestSuccessful, setRequestSuccessful] = useState(false);
-    const [requestError, setRequestError] = useState(false);
+export default function BookingDetails({selectedBooking, closePopup}) {    
+    const {register, handleSubmit} = useForm();
+    const [requestSuccessful] = useState(false);
+    const [requestError] = useState(false);
     const [editForm, setEditForm] = useState(false);
 
     const onSubmit = (data) => {
+        // Tillåt bara förändringar om 'redigera' knappen har tryckts
         if (editForm){
-        let bookpub = data.bookpub ? true : false; // Ugly solution to fix checkbox returning undefined when false in form.
-        TutorialDataService.updateBookingRequest(
-            selectedBooking.id,
-            data.email, 
-            data.name, 
-            data.apartmentnr, 
-            data.description,
-            bookpub,
-            new Date(data.date),
-            )
+            let bookpub = data.bookpub ? true : false; // Ful-lösning för att få en unchecked checkbox att vara 'false' och inte undefined
+            VattentornetDataService.updateBookingRequest(
+                selectedBooking.id,
+                data.email, 
+                data.name, 
+                data.apartmentnr, 
+                data.description,
+                bookpub,
+                new Date(data.date),
+                )
         }
         else {
-            TutorialDataService.confirmBookingRequest(selectedBooking.id)
+            VattentornetDataService.confirmBookingRequest(selectedBooking.id)
         }
-        }
+    }
 
-if(!requestSuccessful && !requestError)
-return (
-    <div className="popup">
-        {console.log(selectedBooking)}
-        <p className="popupHeader">Bokningsförfrågan för {selectedBooking.name}</p>
-        <hr></hr>
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
+    // Visa ej form om request har skickats iväg och är successful
+    if(!requestSuccessful && !requestError)
+    return (
+        <div className="popup">
+            <p className="popupHeader">Bokningsförfrågan för {selectedBooking.name}</p>
+            <hr></hr>
+            <form onSubmit={handleSubmit(onSubmit)}>
+            <label>
                 Datum *
                 <input type="text" placeholder="Önskat datum" disabled={!editForm}
                 {...register("date", {
                     required: "Obligatoriskt", value: format(new Date(selectedBooking.date.toDate()), "yyyy-MM-dd")
                 })}/>
             </label>
-          <label>
+            <label>
                 Mail *
                 <input type="email" placeholder="Din epostadress" disabled={!editForm}
                 {...register("email", {
@@ -53,7 +52,7 @@ return (
                         message: "Ogiltig emailadress"
                     }
                 })} 
-            />
+                />
             </label>
             <label>
                 Ditt namn *
@@ -81,7 +80,9 @@ return (
             </label>
             {!editForm && <button type="button" className="popupButton" onClick={() => setEditForm(true)}>Redigera bokning</button>}
             {editForm && <input type="submit" value={"Uppdatera och bekräfta bokning"}/>}
-            <button type="button" className="popupButton" onClick={() => TutorialDataService.deleteBooking(selectedBooking.id)}>Ta bort bokning</button>
-        </form>
-    </div>
-)}
+            <button type="button" className="popupButton" onClick={() => {VattentornetDataService.deleteBooking(selectedBooking.id); closePopup()}}>Ta bort bokning</button>
+            </form>
+            <button type="button" className="popupButton" onClick={() => closePopup()}>Stäng</button>
+        </div>
+    )
+}

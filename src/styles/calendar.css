@@ -1,6 +1,7 @@
 
+/* Custom CSS file for React Big Calendar package */
 .dateIsBooked {
-    background:rgb(255, 139, 31) !important;
+    background:burlywood !important;
 }
 
 .react-calendar {
@@ -10,17 +11,7 @@
     font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
     line-height: 1.125em;
   }
-  .react-calendar--doubleView {
-    width: 700px;
-  }
-  .react-calendar--doubleView .react-calendar__viewContainer {
-    display: flex;
-    margin: -0.5em;
-  }
-  .react-calendar--doubleView .react-calendar__viewContainer > * {
-    width: 50%;
-    margin: 0.5em;
-  }
+
   .react-calendar,
   .react-calendar *,
   .react-calendar *:before,
@@ -31,7 +22,7 @@
   }
   .react-calendar button {
     margin: 0;
-    border: 0;
+
     outline: none;
   }
   .react-calendar button:enabled:hover {
@@ -46,6 +37,7 @@
     min-width: 44px;
     background: none;
     font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
+    color: black;
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
@@ -73,6 +65,7 @@
     font-size: 0.75em;
     padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
   }
+
   .react-calendar__month-view__days__day--weekend {
     color: #d10000;
   }
@@ -90,17 +83,19 @@
     padding: 0.75em 0.5em;
     background: none;
     font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
+    color: black;
+    border: .5px black solid;
   }
   .react-calendar__tile:disabled {
-    background-color: #b8b8b8;
+    background-color: burlywood;
   }
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
-    background-color: #e6e6e6;
+    background-color: #757575;
   }
   .react-calendar__tile--now {
     /*background: #ffff76;*/
-    border: black solid 1.5px !important;
+    border: white 2px solid !important;
   }
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {

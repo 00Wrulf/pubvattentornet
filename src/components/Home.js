@@ -1,16 +1,12 @@
 import React, {Component} from "react"
-import TutorialDataService from "./tutorial.service";
-import {firebase} from './firebase'
+import VattentornetDataService from "../services/vattentornet.service";
 
 class Home extends Component {
     constructor(props) {
         super(props)
     }
-
     componentDidMount(){
-        //TutorialDataService.login('nibe91@gmail.com', 'nisse123');
-        TutorialDataService.authe();
-        //TutorialDataService.logout();
+        VattentornetDataService.userAuthorization();
         this.setState({
             content : {
                 display: 'none',
