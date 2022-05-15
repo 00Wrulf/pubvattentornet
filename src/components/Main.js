@@ -21,6 +21,9 @@ function Main() {
   const loginPopup = useRef();
   const logoutPopup = useRef();
 
+  // Stänger popup när inloggad eller utloggad. Detta kan göras direkt i knappen istället
+  // Som i deleteBooking knappen i ShowBookingDetails. Då går det också att göra en "STÄNG" knapp
+  // för login/logout-rutan. 
   const openPopup = () => {
     !user ? loginPopup.current.open() : logoutPopup.current.open();
     }

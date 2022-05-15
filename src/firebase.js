@@ -2,10 +2,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-
 // API secrets som accessas från .env filen. OBS att om ändringar görs i .env filen
 // behövs en omstart (npm start).
 const firebaseConfig = {

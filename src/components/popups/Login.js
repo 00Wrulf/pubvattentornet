@@ -8,7 +8,9 @@ export default function LoginPopup({closePopup}) {
     const {register, handleSubmit, setError, formState: { errors } } = useForm();
     
     const onSubmit = (data) => {
-        //TODO: Lägg in error handling om användaren inte finns i DB
+        //TODO: Lägg in error handling om användaren inte finns i DB.
+        // Just nu visas bara error om man inte skriver mail-adressen på rätt format
+        // Finns inte användaren händer ingenting.
         VattentornetDataService.login(data.email, data.password)
     }
 
