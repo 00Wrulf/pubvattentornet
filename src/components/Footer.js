@@ -9,7 +9,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 function Footer(props) {
 
-    // Using state to refresh footer when logged in, does not work perfect
+    // Använder state för att refresha footern när man är inloggad. Funkar ej perfekt.
     const [user] = useAuthState(VattentornetDataService.auth);
 
     const {openPopup} = props;

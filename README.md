@@ -18,7 +18,7 @@ npm start
 
 Ladda ner och lägg .env filen i mappen! 
 
-(Du har väl .env filen? :smirk: ) 
+(Du har väl .env filen? :beer: ) 
 
 Nu kommer du åt sidan via [`localhost:3000`](http://localhost:3000/).
 

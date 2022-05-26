@@ -7,7 +7,8 @@ class VattentornetDataService {
 
     // Built-in authorization functionality within firebase.
     // Admins can be managed via the dashboard
-    // Inbyggd funktionalitet 
+    // Inbyggd funktionalitet för användar-authorization från Firebase.
+    // Admins läggs till i dashboarden i Firebase.
     auth = firebase.auth();
     
     // Funktionalitet för att hämta alla admins. Kanske bra för något?
