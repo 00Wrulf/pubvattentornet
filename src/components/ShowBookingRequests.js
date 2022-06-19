@@ -7,7 +7,7 @@ import VattentornetService from "../services/vattentornet.service";
 import { useCollection } from "react-firebase-hooks/firestore"
 import emailjs from '@emailjs/browser';
 
-//TODO: Fixa tornet service
+//TODO: Två imports till dataservice ATM. Ta bort ena.
 
 function ShowBookingRequests( {confirmedBookings} ) {
 

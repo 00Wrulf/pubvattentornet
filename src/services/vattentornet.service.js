@@ -2,6 +2,7 @@ import {firebase} from '../firebase'
 
 const db = firebase.firestore();
 
+//TODO: Här kan behövas lite uppstädning och nya namn för databas-calls-funktionerna
 
 class VattentornetDataService {
 
