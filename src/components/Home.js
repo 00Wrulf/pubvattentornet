@@ -4,10 +4,6 @@ import Puben from './Puben'
 import Beer from './Beer'
 
 class Home extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   componentDidMount () {
     VattentornetDataService.userAuthorization()
     this.setState({
