@@ -1,6 +1,6 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/firestore";
-import "firebase/compat/auth";
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
+import 'firebase/compat/auth'
 
 // API secrets som accessas från .env filen. OBS att om ändringar görs i .env filen
 // behövs en omstart (npm start).
@@ -11,12 +11,12 @@ const firebaseConfig = {
   storageBucket: `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}`,
   messagingSenderId: `${process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID}`,
   appId: `${process.env.REACT_APP_FIREBASE_APP_ID}`,
-  measurementId: `${process.env.REACT_APP_FIREBASE_MEASUREMENT_ID}`,
-};
+  measurementId: `${process.env.REACT_APP_FIREBASE_MEASUREMENT_ID}`
+}
 
-console.log(process.env.REACT_APP_TEST);
+console.log(process.env.REACT_APP_TEST)
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
 
-export{firebase}
+export { firebase }
