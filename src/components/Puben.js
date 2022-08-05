@@ -36,7 +36,7 @@ function Puben () {
             <div id='info'>
               <div class='clicker' tabIndex='1'>Styrelsen</div>
               <div class='hiddendiv2'>
-                <img src={styret} id='styret' alt='styr' />
+                <img src={styret} id='styret' />
               </div>
             </div>
           </ul>
