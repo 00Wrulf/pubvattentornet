@@ -208,15 +208,62 @@ div .calendar {
 
 .hiddendiv2 {
   display:none;
-  width: 100%;
-  margin-left: 10%;
+  width: 60%;
+  margin-left: 20%;
+  background-color:#EBD2CD;
+  padding: 1.5vh 3.5vh;
+  text-align: center;
 }
 
 #styret {
-  width: 80%;
+  width: 100%;
   align-self: center;
+  border: 5px solid #125446;
 }
 
+#styretInfo {
+  font-size: 2vh;
+  color: #112221;
+}
+
+.hiddendiv2 h1 {
+  color: #112221
+}
+
+.hiddendiv2 a {
+  color: #125446;
+  text-decoration: none;
+}
+
+.hiddendiv2 h3 {
+  padding: 0.5vh;
+  font-size: 2vh;
+  text-decoration: underline;
+}
+
+.hiddendiv2 p {
+  font-size: 1.8vh;
+  margin-top: -2.5vh;
+}
+
+.clicker:focus + .hiddendiv3{
+  display: block;
+}
+
+.hiddendiv3 {
+  display:none;
+  align-content: center;
+  max-width: 95%;
+  background-color:#DB8C7B;
+  padding: 1vh;
+  margin: 3%;
+}
+
+#arbetaForm {
+  border: 5px solid #125446;
+  width: 99.2%;
+  height: 75vh;
+}
 
 #beer h2 {
   padding-top: 20vh;

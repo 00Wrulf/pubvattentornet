@@ -24,19 +24,51 @@ function Puben () {
             <div id='info'>
               <div class='clicker' tabIndex='1'>Bokning av allrum</div>
               <div class='hiddendiv'>
-                <p>Bokning av allrummet är endast till för boende i vattentornet. För att boka allrummet behöver vi ditt lägenhetsnummer i tornet samt en beskrivning av vad lokalerna skall användas till. De regler som gäller för lokalerna är väldigt enkla. Ni ser till att allting går lugnt till, samt ser till att lokalerna är nystädade senaste klockan 12 dagen efter. Ni skall alltså sopa samt MOPPA golv (glöm inte golvet vid hissarna samt utanför toaletterna!), tömma papperskorgarna på toaletterna, samt torka av bord och övriga ytor. Om någonting går sönder är ni ersättningsskyldiga. Är städningen inte ordentligt utförd inom sagda tider tar vi ut en avgift för att själva utföra denna. Sop och mopp finns i allrummets städskåp. Städskåpet finns i hörnet mot puben.</p>
+                <p>Bokning av allrummet är endast till för boende i vattentornet. För att boka allrummet behöver vi ditt lägenhetsnummer i tornet samt en beskrivning av vad lokalerna skall användas till. De regler som gäller för lokalerna är väldigt enkla. Ni ser till att allting går lugnt till, samt ser till att lokalerna är nystädade senaste klockan 12 dagen efter. Ni skall alltså sopa samt MOPPA golv (glöm inte golvet vid hissarna samt utanför toaletterna!). Ni skall även tömma papperskorgarna på toaletterna, samt torka av bord och övriga ytor. Om någonting går sönder är ni ersättningsskyldiga. Är städningen inte ordentligt utförd inom sagda tider tar vi ut en avgift för att själva utföra denna. Sop och mopp finns i allrummets städskåp. Städskåpet finns i hörnet mot puben.</p>
               </div>
             </div>
             <div id='info'>
               <div class='clicker' tabIndex='1'>Utlåning för boende</div>
               <div class='hiddendiv'>
-                <p>Boende i vattentornet kan låna följande saker av borådet. Projektor samt projektorduk Två biljardköer, bollar samt triangel Borrmaskin med 103 bits och borrar</p>
+                <p>Boende i vattentornet kan låna följande saker av borådet. Projektor samt projektorduk, två biljardköer, bollar samt triangel Borrmaskin med 103 bits och borrar</p>
+              </div>
+            </div>
+            <div id='info'>
+              <div class='clicker' tabIndex='1'>Jobba på Tornet?</div>
+              <div class='hiddendiv3'>
+                <iframe id='arbetaForm' src='https://docs.google.com/forms/d/e/1FAIpQLScpWXw5iyqYpv5O9gaCW8nI3UG3p0wEo1r6YHSpx2vSFArNuw/viewform' />
               </div>
             </div>
             <div id='info'>
               <div class='clicker' tabIndex='1'>Styrelsen</div>
               <div class='hiddendiv2'>
+                <h1>Vattentornet 22/23</h1>
                 <img src={styret} id='styret' />
+                <h2 id='styretInfo'>Saknar du någon information? Tveka inte att skicka ett mail till oss på <a href='mailto: info@vattentor.net'>info@vattentor.net</a>,
+                eller om du har någon fundering till en specifik, se kontaktinfo nedan!
+                </h2>
+
+                <h3>Ordförande:</h3>
+                <p><a href='mailto: anna@vattentor.net'>anna@vattentor.net</a></p>
+
+                <h3>Event:</h3>
+                <p><a href='mailto: event@vattentor.net'>event@vattentor.net</a></p>
+
+                <h3>Kassör:</h3>
+                <p><a href='mailto: kassor@vattentor.net'>kassor@vattentor.net</a></p>
+
+                <h3>Inköp:</h3>
+                <p><a href='mailto: inkop@vattentor.net'>inkop@vattentor.net</a></p>
+
+                <h3>Tryck och PR:</h3>
+                <p><a href='mailto: tryckochpr@vattentor.net'>tryckochpr@vattentor.net</a></p>
+
+                <h3>Personal:</h3>
+                <p><a href='mailto: alice.dromberg@vattentor.net'>alice.dromberg@vattentor.net</a></p>
+
+                <h3>Webb:</h3>
+                <p><a href='mailto: webb@vattentor.net'>webb@vattentor.net</a></p>
+
               </div>
             </div>
           </ul>
