@@ -441,6 +441,10 @@ input[type="button"]:active {
   div .about h2 {
     font-size: 5vw;
   }
+  
+  .hiddendiv2 {
+    margin-left: 12%;
+  }
 
   .bookingsTable td, th{
     font-family: Mulish;
