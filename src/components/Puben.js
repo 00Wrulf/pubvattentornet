@@ -64,7 +64,7 @@ function Puben () {
                 <p><a href='mailto: tryckochpr@vattentor.net'>tryckochpr@vattentor.net</a></p>
 
                 <h3>Personal:</h3>
-                <p><a href='mailto: alice.dromberg@vattentor.net'>alice.dromberg@vattentor.net</a></p>
+                <p><a href='mailto: personal@vattentor.net'>personal@vattentor.net</a></p>
 
                 <h3>Webb:</h3>
                 <p><a href='mailto: webb@vattentor.net'>webb@vattentor.net</a></p>
