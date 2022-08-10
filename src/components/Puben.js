@@ -58,9 +58,9 @@ function Puben () {
               }
             </div>
             <div id='info'>
-              <button class='clicker' onClick={() => setShow3(!show3)}>Styrelsen</button>
+              <button class='clicker' onClick={() => setShow6(!show6)}>Styrelsen</button>
               {
-                show3
+                show6
                   ? <div class='hiddendiv2'>
                     <h1>Vattentornet 22/23</h1>
                     <img src={styret} id='styret' />
@@ -88,7 +88,7 @@ function Puben () {
 
                     <h3>Webb:</h3>
                     <p><a href='mailto: webb@vattentor.net'>webb@vattentor.net</a></p>
-                  </div>
+                    </div>
                   : null
               }
             </div>
