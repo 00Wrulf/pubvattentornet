@@ -161,7 +161,7 @@ div .about{
   -webkit-text-stroke: var(--fill-color);
   background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
   color: #DB8C7B;
-  transition: 0.5s linear;
+  transition: 0.3s linear;
   cursor: pointer;
   border: 1px solid #DB8C7B;  
 }
@@ -171,21 +171,11 @@ div .about{
 }
 
 .hiddendiv{
-  display:none;
   align-content: center;
   max-width: 92%;
   background-color:#EBD2CD;
   padding: 3vh;
   margin: 2%;
-}
-
-.clicker:focus + .hiddendiv{
-  display: block;
-}
-
-.clicker:focus {
-  background: #DB8C7B;
-  color: #125446;
 }
 
 .hiddendiv p {
@@ -202,12 +192,7 @@ div .calendar {
   padding-top: 9vh;
 }
 
-.clicker:focus + .hiddendiv2{
-  display: block;
-}
-
 .hiddendiv2 {
-  display:none;
   width: 60%;
   margin-left: 20%;
   background-color:#EBD2CD;
@@ -246,12 +231,7 @@ div .calendar {
   margin-top: -2.5vh;
 }
 
-.clicker:focus + .hiddendiv3{
-  display: block;
-}
-
 .hiddendiv3 {
-  display:none;
   align-content: center;
   max-width: 95%;
   background-color:#DB8C7B;
@@ -354,7 +334,7 @@ div .calendar {
   position: fixed;
 }
 
-button {
+.popupButton {
   background: orange;
   color: white;
   text-transform: uppercase;
@@ -365,7 +345,7 @@ button {
   font-weight: 100;
 }
 
-button:hover{
+.popupButton:hover{
   background: #bf1650;
   transition: 0.3s all;
 }

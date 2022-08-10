@@ -95,7 +95,7 @@
     letter-spacing: 10px;
   }
   
-  input[type="submit"]:hover:enabled, button:hover:enabled {
+  input[type="submit"]:hover:enabled, .popupButton:hover:enabled {
     background: #bf1650;
   }
   
