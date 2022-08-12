@@ -53,7 +53,7 @@ function Puben () {
               <button class='clicker' onClick={() => setShow5(!show5)}>Jobba på Tornet?</button>
               {
                 show5
-                  ? <div class='hiddendiv3'><iframe id='arbetaForm' src='https://docs.google.com/forms/d/e/1FAIpQLScpWXw5iyqYpv5O9gaCW8nI3UG3p0wEo1r6YHSpx2vSFArNuw/viewform' /></div>
+                  ? <div class='hiddendiv3'><iframe title='Arbeta' id='arbetaForm' src='https://docs.google.com/forms/d/e/1FAIpQLScpWXw5iyqYpv5O9gaCW8nI3UG3p0wEo1r6YHSpx2vSFArNuw/viewform' /></div>
                   : null
               }
             </div>
@@ -63,7 +63,7 @@ function Puben () {
                 show6
                   ? <div class='hiddendiv2'>
                     <h1>Vattentornet 22/23</h1>
-                    <img src={styret} id='styret' />
+                    <img src={styret} id='styret' alt='styrelsen' />
                     <h2 id='styretInfo'>Saknar du någon information? Tveka inte att skicka ett mail till oss på <a href='mailto: info@vattentor.net'>info@vattentor.net</a>,
                                         eller om du har någon fundering till en specifik, se kontaktinfo nedan!
                     </h2>
@@ -88,7 +88,7 @@ function Puben () {
 
                     <h3>Webb:</h3>
                     <p><a href='mailto: webb@vattentor.net'>webb@vattentor.net</a></p>
-                    </div>
+                  </div>
                   : null
               }
             </div>

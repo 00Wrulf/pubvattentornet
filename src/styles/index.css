@@ -133,13 +133,11 @@ div .about{
   flex-direction: column;
   align-items: flex-start;
   line-height: 1.5;
-  width: 100%;
 }
 
 .pubInfo ul {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   list-style-type: none; 
   padding: 10px;
   }
@@ -159,11 +157,13 @@ div .about{
   text-decoration: none;
   text-transform: uppercase;
   -webkit-text-stroke: var(--fill-color);
+  text-align: left;
   background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
   color: #DB8C7B;
   transition: 0.3s linear;
   cursor: pointer;
   border: 1px solid #DB8C7B;  
+  width: 96.85vw;
 }
 
 .clicker:hover {
@@ -172,10 +172,11 @@ div .about{
 
 .hiddendiv{
   align-content: center;
-  max-width: 92%;
+  max-width: 97%;
   background-color:#EBD2CD;
-  padding: 3vh;
-  margin: 2%;
+  padding: 3vh 0;
+  padding-left: 1%;
+  margin: 10px;
 }
 
 .hiddendiv p {
@@ -193,15 +194,15 @@ div .calendar {
 }
 
 .hiddendiv2 {
-  width: 60%;
-  margin-left: 20%;
+  width: 98%;
   background-color:#EBD2CD;
-  padding: 1.5vh 3.5vh;
+  padding: 1.5vh 0;
   text-align: center;
+  margin: 10px;
 }
 
 #styret {
-  width: 100%;
+  width: 70%;
   align-self: center;
   border: 5px solid #125446;
 }
@@ -233,10 +234,10 @@ div .calendar {
 
 .hiddendiv3 {
   align-content: center;
-  max-width: 95%;
+  max-width: 96%;
   background-color:#DB8C7B;
-  padding: 1vh;
-  margin: 3%;
+  padding: 1%;
+  margin: 10px;
 }
 
 #arbetaForm {
@@ -420,10 +421,6 @@ input[type="button"]:active {
 
   div .about h2 {
     font-size: 5vw;
-  }
-  
-  .hiddendiv2 {
-    margin-left: 12%;
   }
 
   .bookingsTable td, th{
