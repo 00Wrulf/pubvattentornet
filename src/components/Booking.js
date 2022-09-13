@@ -103,6 +103,15 @@ function Booking () {
       </div>
       {/* Om inloggad som admin, rendera bokningshanterare */}
       {user && <ShowBookingRequests confirmedBookings={confirmedBookings} />}
+
+      <div className='BoxInfo'>
+        <p className='BookedBoxPub' />
+        <h3>Datumet är passerat/Datum då det är pub</h3>
+        <p className='BookedBoxIndivid' />
+        <h3>Datumet är privat bokat</h3>
+        <p className='Free' />
+        <h3>Datumet är ledigt</h3>
+      </div>
     </div>
   )
 }

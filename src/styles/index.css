@@ -189,7 +189,6 @@ div .calendar {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 9vh;
   padding-top: 9vh;
 }
 
@@ -295,6 +294,39 @@ div .calendar {
   font-family: Mulish;
   font-weight: bold;
   color: white;
+}
+
+.BoxInfo {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  align-items: center;
+}
+
+.BoxInfo p {
+  width: 50px;
+  height: 40px;
+  margin: 0 0 0 20px; 
+  border-radius: 2px;
+}
+
+.BoxInfo h3{
+  color: white;
+  font-size: larger;
+  margin-left: 7px;
+  letter-spacing: 0.5px;
+}
+
+.BookedBoxPub {
+  background-color: #DB8C7B;
+}
+
+.BookedBoxIndivid {
+  background-color: burlywood;
+}
+
+.Free {
+  background-color: #EBD2CD;
 }
 
 .footer {
