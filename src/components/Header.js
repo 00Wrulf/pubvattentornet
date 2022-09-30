@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Home from './Home'
 import Booking from './Booking'
-import logo from '../images/logo/logoRound.png'
 import VattentornetDataService from '../services/vattentornet.service'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
@@ -16,7 +15,6 @@ function Header () {
           <li><a href='#about'>PUBEN</a></li>
           <li><a href='#beer'>ÖLEN</a></li>
         </ul>
-        <Link to='/'><img className='logo' src={logo} alt='Home' /></Link>
         <ul>
           {user ? <li><Link to='/Booking' style={{ color: 'orange' }}>ADMIN</Link></li>
             : <li id='boka'><Link to='/Booking'>BOKA</Link></li>}

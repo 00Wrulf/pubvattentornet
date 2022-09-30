@@ -41,17 +41,24 @@ function Main () {
       `linear-gradient(rgba(255, 255, 255, 0) 20vh, rgba(0, 0, 0, 1.0) 100%), url(${backgrounds[randomIndex]})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    width: '-2vw'
+    width: '50vw'
   }
 
   return (
-    <div style={bg} className='bg'>
-      <Header />
+    <div className='container'>
+      <div style={bg} className='left'>
+        <p>left</p>
+      </div>
 
-      <Popup ref={loginPopup}><LoginPopup closePopup={closePopup} /></Popup>
-      <Popup ref={logoutPopup}><LogoutPopup closePopup={closePopup} /></Popup>
+      <div className='right'>
+        <Header />
 
-      <Footer openPopup={openPopup} />
+        <Popup ref={loginPopup}><LoginPopup closePopup={closePopup} /></Popup>
+        <Popup ref={logoutPopup}><LogoutPopup closePopup={closePopup} /></Popup>
+
+        <Footer openPopup={openPopup} />
+      </div>
+
     </div>
   )
 };

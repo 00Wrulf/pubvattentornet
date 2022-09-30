@@ -21,12 +21,12 @@ class Home extends Component {
           <h1>Pub Vattentornet</h1>
           <div id='arrow'>
             <svg width='22' height='90' viewBox='0 0 22 90' fill='none' xmlns='http://www.w3.org/2000/svg' opacity='1'>
-              <path d='M11 0L11 88' stroke='#DB8C7B' stroke-width='2' />
-              <path d='M1 78L11 88L21 78' stroke='#DB8C7B' stroke-width='2' />
+              <path d='M11 0L11 88' stroke='#125446' stroke-width='2' />
+              <path d='M1 78L11 88L21 78' stroke='#125446' stroke-width='2' />
             </svg>
           </div>
         </div>
-        <div className='about'>¨
+        <div className='about'>
           <Puben />
         </div>
 
