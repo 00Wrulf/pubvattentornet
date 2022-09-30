@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 class Beer extends Component {
   render () {
     return (
-      <div className='content'>
+      <div className='menu'>
         <div id='beer'>
           <h2>Dryckesmeny är under konstruktion, kom tillbaka vid ett senare tillfälle!</h2>
         </div>

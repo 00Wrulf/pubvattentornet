@@ -41,7 +41,7 @@ function Main () {
       `linear-gradient(rgba(255, 255, 255, 0) 20vh, rgba(0, 0, 0, 1.0) 100%), url(${backgrounds[randomIndex]})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    width: '50vw'
+    width: '40%'
   }
 
   return (
