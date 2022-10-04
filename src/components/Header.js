@@ -14,8 +14,14 @@ function Header () {
       <div className='header'>
         <ul>
           <li><Link to='/Home'>HOME</Link></li>
+          <br />
+          <br />
           <li><Link to='/Puben'>PUBEN</Link></li>
+          <br />
+          <br />
           <li><Link to='/Beer'>ÖLEN</Link></li>
+          <br />
+          <br />
           {user ? <li><Link to='/Booking' style={{ color: 'orange' }}>ADMIN</Link></li>
             : <li><Link to='/Booking'>BOKA</Link></li>}
         </ul>

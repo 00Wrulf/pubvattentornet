@@ -63,18 +63,12 @@ h1, h2, h3, p, ul, li {
   border-right: 1px solid black;
 }
 
-
-.header #boka {
-  border-radius: 50px;
-  font-size: 30px;
-}
-
 .header #boka a {
   color: black;
 }
 
 .header ul {
-  padding-right: 2%;
+  padding-right: 50%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
