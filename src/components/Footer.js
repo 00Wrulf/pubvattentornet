@@ -17,12 +17,13 @@ function Footer (props) {
       <ul>
         <li><h1>Har du en fråga? Maila oss på <a href='mailto: info@vattentor.net'>info@vattentor.net</a>!</h1></li>
 
-        <li><a href='https://www.facebook.com/Pub.Vattentornet' target='_blank' rel='noopener noreferrer' className='socialSymbol'><ImFacebook2 color='#DB8C7B' size={25} /></a></li>
-        <li><a href='https://www.instagram.com/pubvattentornet/' target='_blank' rel='noopener noreferrer' className='socialSymbol'><ImInstagram color='#DB8C7B' size={25} /></a></li>
-        <li><h4>© Pub Vattentornet {new Date().getFullYear()}</h4></li>
-        <li>{!user
-          ? <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogIn color='black' size={25} /></a>
-          : <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogOut color='red' size={25} /></a>}
+        <li><a href='https://www.facebook.com/Pub.Vattentornet' target='_blank' rel='noopener noreferrer' className='socialSymbol'><ImFacebook2 color='#DB8C7B' size={25} /></a><a href='https://www.instagram.com/pubvattentornet/' target='_blank' rel='noopener noreferrer' className='socialSymbol'><ImInstagram color='#DB8C7B' size={25} /></a></li>
+        <li>
+
+          {!user
+            ? <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogIn color='black' size={25} /></a>
+            : <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogOut color='red' size={25} /></a>}
+          <h4>© Pub Vattentornet {new Date().getFullYear()}</h4>
         </li>
 
       </ul>
