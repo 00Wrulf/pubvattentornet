@@ -30,6 +30,7 @@ function Header () {
       </div>
       <div className='headerContent'>
         <Switch>
+          <Route path='/' exact component={Home} />
           <Route path='/Home' component={Home} />
           <Route path='/Puben' component={Puben} />
           <Route path='/Beer' component={Beer} />
@@ -37,7 +38,7 @@ function Header () {
           {user
             ? <>
               <Route path='/Booking' component={Booking} />
-            </> : <p> Unauthorized </p>}
+              </> : <p> Unauthorized </p>}
           <Route render={() => <h1>Oops, denna sida finns ej..</h1>} />
         </Switch>
       </div>
