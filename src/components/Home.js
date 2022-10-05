@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import VattentornetDataService from '../services/vattentornet.service'
-import Puben from './Puben'
-import Beer from './Beer'
 
 class Home extends Component {
   componentDidMount () {

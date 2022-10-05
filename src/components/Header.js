@@ -4,6 +4,7 @@ import Home from './Home'
 import Booking from './Booking'
 import Puben from './Puben'
 import Beer from './Beer'
+import logo from '../images/logo/logoTall.png'
 import VattentornetDataService from '../services/vattentornet.service'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
@@ -12,6 +13,7 @@ function Header () {
   return (
     <Router>
       <div className='header'>
+        <Link to='/Home'><img className='hlogo' src={logo} alt='Home' /></Link>
         <ul>
           <li><Link to='/Home'>HOME</Link></li>
           <br />
