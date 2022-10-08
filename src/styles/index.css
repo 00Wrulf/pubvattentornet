@@ -48,6 +48,8 @@ h1, h2, h3, p, ul, li {
   width: 70%;
   height: 100%;
   background-color: white;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -92,15 +94,12 @@ h1, h2, h3, p, ul, li {
   cursor: pointer;
 }
 
-
-
 .hlogo {
   height: 200px;
   top: 0;
   padding-top: 20%;
   padding-bottom: 100%;
 }
-
 
 .menu {
   background-color: white;
@@ -228,7 +227,6 @@ div .calendar {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 9vh;
 }
 
 .hiddendiv2 {
