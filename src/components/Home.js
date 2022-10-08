@@ -15,8 +15,11 @@ class Home extends Component {
     return (
       <div className='welcomeContainer'>
         <div className='welcome'>
-          <p>Lennings gata 2, Norrköping</p>
           <h1>Pub Vattentornet</h1>
+
+          <hr />
+
+          <p>Finöl till fulölspriser vid Lennings gata 2, Norrköping!</p>
         </div>
       </div>
     )
