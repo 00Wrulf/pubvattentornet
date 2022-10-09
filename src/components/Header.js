@@ -18,7 +18,7 @@ function Header () {
           <li><Link to='/Home'>HOME</Link></li>
           <br />
           <br />
-          <li><Link to='/Puben'>PUBEN</Link></li>
+          <li><Link to='/Puben'>FAQ</Link></li>
           <br />
           <br />
           <li><Link to='/Beer'>ÖLEN</Link></li>
@@ -38,7 +38,7 @@ function Header () {
           {user
             ? <>
               <Route path='/Booking' component={Booking} />
-              </> : <p> Unauthorized </p>}
+            </> : <p> Unauthorized </p>}
           <Route render={() => <h1>Oops, denna sida finns ej..</h1>} />
         </Switch>
       </div>

@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  background-color: #F9F6EE;
+  background-color: white;
 }
 
 h1, h2, h3, p, ul, li {
@@ -29,7 +29,6 @@ h1, h2, h3, p, ul, li {
   flex-shrink: 0;
   width: 100%;
   height: 100vh;
-  background-color: #F9F6EE;
 }
 
 .wrapper {
@@ -38,7 +37,6 @@ h1, h2, h3, p, ul, li {
   flex-shrink: 0;
   width: 100%;
   height: 100%;
-  background-color: #F9F6EE;
 }
 
 .headerContent {
@@ -48,9 +46,9 @@ h1, h2, h3, p, ul, li {
   width: 70%;
   height: 100%;
   margin-left: 30%;
-  background-color: #78A5A3;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
 
 .header {
@@ -62,8 +60,8 @@ h1, h2, h3, p, ul, li {
   align-items: center;
   position: fixed;
   top: 0;
-  background-color: #444C5C;
-  border-right: 1px solid black;
+  border-right: 2px solid black;
+  background-color: white;
 }
 
 .header #boka a {
@@ -71,7 +69,8 @@ h1, h2, h3, p, ul, li {
 }
 
 .header ul {
-  padding-right: 50%;
+  margin-left: 20%;
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -87,9 +86,19 @@ h1, h2, h3, p, ul, li {
 }
 
 .header ul li a {
-  color: #CE5A57;
+  color: white;
   text-decoration: none;
   -webkit-text-stroke: 1px black;
+}
+
+.header a:hover {
+  color: darkred;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+.header a:active {
+  color: red;
 }
 
 .header li{
@@ -106,7 +115,6 @@ h1, h2, h3, p, ul, li {
 }
 
 .menu {
-  background-color: #F9F6EE;
   width: 100%; 
   height: 100%;
   align-items: center;
@@ -137,6 +145,7 @@ div .welcomeContainer{
   display: flex;
   align-items: center;
   width: 100%;
+  
 }
 
 div .welcome {
@@ -148,15 +157,15 @@ div .welcome {
 
 div .welcome h1 {
   font-family: 'Oi', cursive;
-  color: #E1B16A;
+  color: white;
   font-size: 6vw;
   align-self: center;
   margin-left: 3%;
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 4px black;
 }
 
 div .welcome hr {
-  border: 2px solid #E1B16A;
+  border: 2px solid #1F2837;
   border-radius: 5px;
   width: 75%;
 }
@@ -186,19 +195,16 @@ div .about{
   display: flex;
   flex-direction: column;
   list-style-type: none; 
-  padding: 10px;
   }
 
 .pubInfo li {
   padding: 2%;
-  width: 60vw;  
+  width: 20vw;  
 }
 
 .clicker {
   --fill-color: #b15000de;
   display: block;
-  padding: 10px;
-  margin: 10px;
   font: 600 5.5vw Raleway, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
