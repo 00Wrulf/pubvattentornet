@@ -4,7 +4,7 @@ import Home from './Home'
 import Booking from './Booking'
 import Puben from './Puben'
 import Beer from './Beer'
-import logo from '../images/logo/logoTall.png'
+import logo from '../images/logo/placeholder.jpeg'
 import VattentornetDataService from '../services/vattentornet.service'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
@@ -17,12 +17,9 @@ function Header () {
         <ul>
           <li><Link to='/Home'>HOME</Link></li>
           <br />
-          <br />
           <li><Link to='/Puben'>FAQ</Link></li>
           <br />
-          <br />
           <li><Link to='/Beer'>ÖLEN</Link></li>
-          <br />
           <br />
           {user ? <li><Link to='/Booking' style={{ color: 'orange' }}>ADMIN</Link></li>
             : <li><Link to='/Booking'>BOKA</Link></li>}
