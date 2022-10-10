@@ -43,16 +43,24 @@ h1, h2, h3, p, ul, li {
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
-  width: 70%;
+  width: 75%;
   height: 100%;
-  margin-left: 30%;
+  margin-left: 25%;
   align-items: center;
   justify-content: center;
-  background-color: white;
+}
+
+.bg {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  filter: hue-rotate(15deg) contrast(0.85) brightness(0.9);
+  z-index: -1;
 }
 
 .header {
-  width: 30%;
+  width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -61,7 +69,7 @@ h1, h2, h3, p, ul, li {
   position: fixed;
   top: 0;
   border-right: 2px solid black;
-  background-color: white;
+  background-color: #4B5842;
 }
 
 .header #boka a {
@@ -86,9 +94,9 @@ h1, h2, h3, p, ul, li {
 }
 
 .header ul li a {
-  color: white;
+  color: #D2F189;
   text-decoration: none;
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1px white;
 }
 
 .header a:hover {
@@ -157,24 +165,27 @@ div .welcome {
 
 div .welcome h1 {
   font-family: 'Oi', cursive;
-  color: white;
+  color: #D2F189;
   font-size: 6vw;
   align-self: center;
   margin-left: 3%;
-  -webkit-text-stroke: 4px black;
+  -webkit-text-stroke: 1px black;
+  filter: opacity(90%) drop-shadow(2px 3px 2px black);
 }
 
 div .welcome hr {
-  border: 2px solid #1F2837;
+  border: 2px solid #D2F189;;
   border-radius: 5px;
   width: 75%;
+  filter: drop-shadow(2px 3px 2px black);
 }
 
 div .welcome p {
   font-family: 'Gill Sans';
   font-size: 1.5vw;
   align-self: center;
-  color: black;
+  color: #D2F189;
+  filter: drop-shadow(2px 3px 2px black);
 }
 
 #arrow {
@@ -389,7 +400,7 @@ div .calendar {
   flex-direction: column;
   bottom: 0;
   left: 0;
-  width: 30%;
+  width: 25%;
   font-family: 'Mulish', regular;
   font-weight: lighter;
   justify-content: center;
