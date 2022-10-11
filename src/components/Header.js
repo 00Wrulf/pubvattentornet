@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Home from './Home'
 import Booking from './Booking'
 import Puben from './Puben'
-import Beer from './Beer'
+import Beer from './pages/Beer'
+import Work from './pages/Work'
+import About from './pages/About'
 import logo from '../images/logo/placeholder.jpeg'
 import VattentornetDataService from '../services/vattentornet.service'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -17,9 +19,13 @@ function Header () {
         <ul>
           <li><Link to='/Home'>HOME</Link></li>
           <br />
+          <li><Link to='/About'>OM OSS</Link></li>
+          <br />
           <li><Link to='/Puben'>FAQ</Link></li>
           <br />
           <li><Link to='/Beer'>ÖLEN</Link></li>
+          <br />
+          <li><Link to='/Work'>JOBBA</Link></li>
           <br />
           {user ? <li><Link to='/Booking' style={{ color: 'orange' }}>ADMIN</Link></li>
             : <li><Link to='/Booking'>BOKA</Link></li>}
@@ -29,8 +35,10 @@ function Header () {
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/Home' component={Home} />
+          <Route path='/About' component={About} />
           <Route path='/Puben' component={Puben} />
           <Route path='/Beer' component={Beer} />
+          <Route path='/Work' component={Work} />
           <Route path='/Booking' component={Booking} />
           {user
             ? <>
