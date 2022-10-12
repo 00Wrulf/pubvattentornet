@@ -29,6 +29,12 @@ function Header () {
           <br />
           {user ? <li><Link to='/Booking' style={{ color: 'orange' }}>ADMIN</Link></li>
             : <li><Link to='/Booking'>BOKA</Link></li>}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <li><Link to='/Contact'>Kontakt</Link></li>
         </ul>
       </div>
       <div className='headerContent'>

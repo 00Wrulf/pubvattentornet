@@ -211,15 +211,16 @@ div .welcome p {
   font-size: 7vw;
   font-family: 'Psy';
   -webkit-text-stroke: 1.2px black;
+  margin-bottom: 0;
 }
 
 .about h2 {
   color: #b75be9;
   font-size: 4vw;
-  font-family: 'Serif';
+  font-family: 'Comic Sans MS';
   -webkit-text-stroke: 0.8px black;
   margin-bottom: 0;
-  margin-top: 2vw;
+  margin-top: 1vw;
   width: 100%;
   text-align: left;
 }
