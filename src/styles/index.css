@@ -1,7 +1,4 @@
 
-
-
-
 /*--------- FONTS ----------*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
@@ -34,7 +31,7 @@ html, body {
 }
 
 body {
-  background-color: #bfc2bf;
+  background-color: #888888;
 }
 
 h1, h2, h3, p, ul, li {
@@ -72,7 +69,7 @@ h1, h2, h3, p, ul, li {
   position: fixed;
   top: 0;
   border-right: 2px solid black;
-  background-color: #bfc2bf;
+  background-color: #888888;
 }
 
 .header #boka a {

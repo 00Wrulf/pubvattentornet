@@ -1,3 +1,9 @@
+/*---------- FONT -----------*/
+@font-face {
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Regular.ttf);
+  font-family: 'Regular';
+}
+
 
 /* Custom CSS file for React Big Calendar package */
 .dateIsBooked {
@@ -5,10 +11,11 @@
 }
 
 .react-calendar {
-    max-width: 50%;
-    background: #d8dad7;
-    font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
+    max-width: 79%;
+    background: #b5b5b5;
+    font-family: 'Regular';
     line-height: 1.125em;
+    text-transform: uppercase;
   }
 
   .react-calendar,
@@ -35,13 +42,14 @@
   .react-calendar__navigation button {
     min-width: 44px;
     background: none;
-    font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
+    font-family: 'Regular';
     color: black;
     border: 1.2px solid black;
+    text-transform: uppercase;
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
-    background-color: #e6e6e6;
+    background-color: #35ff23;
   }
   .react-calendar__navigation button[disabled] {
     background-color: #f0f0f0;
@@ -81,7 +89,6 @@
     text-align: center;
     padding: 0.75em 0.5em;
     background: none;
-    font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
     color: black;
     border: .5px black solid;
   }
@@ -121,8 +128,6 @@
   .react-calendar--selectRange .react-calendar__tile--hover {
     background-color: #e6e6e6;
   }
-
-  
 
   @media only screen and (max-width: 1000px) {
   

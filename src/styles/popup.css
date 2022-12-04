@@ -5,7 +5,7 @@
 
 .popup-content {
     margin: auto;
-    background:#fdefd2;
+    background:#cdd2cc;
     font-family: 'mulish', regular;
     width: 40%;
     padding: 2vw;
@@ -84,7 +84,7 @@
   }
   
   input[type="submit"], button.popupButton {
-    background: orange;
+    background: #1f2d00;
     color: white;
     text-transform: uppercase;
     border: none;
@@ -96,7 +96,9 @@
   }
   
   input[type="submit"]:hover:enabled, .popupButton:hover:enabled {
-    background: #bf1650;
+    background: #1eff00;
+    color: black;
+    transition: 0.3s all;
   }
   
   input[type="button"]:active,
