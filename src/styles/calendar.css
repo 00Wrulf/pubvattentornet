@@ -1,13 +1,12 @@
 
 /* Custom CSS file for React Big Calendar package */
 .dateIsBooked {
-    background:burlywood !important;
+    background:rgb(0, 255, 89) !important;
 }
 
 .react-calendar {
     max-width: 50%;
-    background: #EBD2CD;
-    border: 3px solid #EBD2CD;
+    background: #d8dad7;
     font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
     line-height: 1.125em;
   }
@@ -38,6 +37,7 @@
     background: none;
     font-family: 'Fjalla One', sans-serif, Helvetica, sans-serif;
     color: black;
+    border: 1.2px solid black;
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
@@ -49,7 +49,6 @@
   .react-calendar__month-view__weekdays {
     text-align: center;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 0.75em;
   }
   .react-calendar__month-view__weekdays__weekday {
@@ -87,17 +86,18 @@
     border: .5px black solid;
   }
   .react-calendar__tile:disabled {
-    background-color: #c97e6d;
+    background-color: #007d0fc8;
+    opacity: 0.8;
     color: black;
     text-decoration: line-through;
   }
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
-    background-color: #3B887B;
+    background-color: #35ff23;
   }
   .react-calendar__tile--now {
     /*background: #ffff76;*/
-    border: white 2px solid !important;
+    border: rgb(17, 148, 48) 2px solid !important;
   }
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {
@@ -122,6 +122,7 @@
     background-color: #e6e6e6;
   }
 
+  
 
   @media only screen and (max-width: 1000px) {
   

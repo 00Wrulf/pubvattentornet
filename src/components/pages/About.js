@@ -18,8 +18,8 @@ class About extends Component {
             Själva Pub Vattentornet består dels av pubdelen samt en extra allrumsdel. Puben i sig är utrustad med två tappar för öl och cider,
             samt två rejäla kylar för all resterande dryck som bör vara kall!
         </p>
-        <br />
         <p>
+          <br />
             I puben går ett 30-tal personer in om man nyttjar samtliga bord/stolar samt ståytor. Skulle inte detta räcka så får man ta till
             allrumsdelen där ytterligare ett 40-tal personer får plats.
             Våra fantastiska lokaler går alldeles utmärkt att boka! Du kan läsa mer om detta under fliken "Boka", samt skicka en bokningsförfrågan på ditt valda datum!

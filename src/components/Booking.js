@@ -65,10 +65,11 @@ function Booking () {
     if (date.getDay() === 4 || date.getDay() === 5) return date // Avaktivera bokningar för torsdagar och fredagar pga puben är öppen
     if (differenceInMonths(date, Date.now()) > 3) return date // Avaktivera bokningar längre än 3 månader fram i tiden
     if (confirmedBookingsArray.find(e => isSameDay(e.date, date))) return date
+    if (date.getMonth() === 0) return date
   }
 
   return (
-    <div className='content'>
+    <div className='bContent'>
 
       {
         // Ladda bekräftade bokningar och sätt in i array
@@ -106,11 +107,11 @@ function Booking () {
 
       <div className='BoxInfo'>
         <p className='BookedBoxPub' />
-        <h3>Datumet är passerat/Datum då det är pub</h3>
+        <h3>Datumet är passerat/PUB!</h3>
         <p className='BookedBoxIndivid' />
         <h3>Datumet är privat bokat</h3>
         <p className='Free' />
-        <h3>Datumet är ledigt</h3>
+        <h3>Datumet är ledigt!</h3>
       </div>
     </div>
   )

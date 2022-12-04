@@ -15,9 +15,6 @@ function Footer (props) {
   return (
     <footer className='footer'>
       <ul>
-        <li><h1>Har du en fråga? Maila oss på <a href='mailto: info@vattentor.net'>info@vattentor.net</a>!</h1></li>
-
-        <li><a href='https://www.facebook.com/Pub.Vattentornet' target='_blank' rel='noopener noreferrer' className='socialSymbol'><ImFacebook2 color='#DB8C7B' size={25} /></a><a href='https://www.instagram.com/pubvattentornet/' target='_blank' rel='noopener noreferrer' className='socialSymbol'><ImInstagram color='#DB8C7B' size={25} /></a></li>
         <li>
 
           {!user

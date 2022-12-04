@@ -1,14 +1,31 @@
+
+
+
+
+/*--------- FONTS ----------*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 @font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Flames-LWzG.ttf);
-  font-family: 'Wobbly';
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Light.ttf);
+  font-family: 'Light';
 }
 
 @font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/JMH Psychedelic CAPS.ttf);
-  font-family: 'Psy';
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Regular.ttf);
+  font-family: 'Regular';
 }
+
+@font-face {
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Medium.ttf);
+  font-family: 'Medium';
+}
+
+@font-face {
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Bold.ttf);
+  font-family: 'Bold';
+}
+
+/*--------- BODY ----------*/
 
 html, body {
   height: 100%;
@@ -17,7 +34,7 @@ html, body {
 }
 
 body {
-  background-color: #fffdee;
+  background-color: #bfc2bf;
 }
 
 h1, h2, h3, p, ul, li {
@@ -33,6 +50,8 @@ h1, h2, h3, p, ul, li {
   flex-shrink: 0;
 }
 
+/*--------- WRAPPER ----------*/
+
 .hwrapper{
   display: flex;
   flex-direction: row;
@@ -41,33 +60,8 @@ h1, h2, h3, p, ul, li {
   height: 100vh;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  width: 100%;
-}
 
-.headerContent {
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  width: 75%;
-  height: 100vh;
-  margin-left: 25%;
-  align-items: center;
-  justify-content: center;
-}
-
-.bg {
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  filter: hue-rotate(15deg) contrast(1) brightness(0.7);
-  z-index: -1;
-}
-
+/*--------- HEADER ----------*/
 .header {
   width: 25%;
   height: 100%;
@@ -78,7 +72,7 @@ h1, h2, h3, p, ul, li {
   position: fixed;
   top: 0;
   border-right: 2px solid black;
-  background-color: #fffdee ;
+  background-color: #bfc2bf;
 }
 
 .header #boka a {
@@ -86,7 +80,7 @@ h1, h2, h3, p, ul, li {
 }
 
 .header ul {
-  margin-left: 20%;
+  margin-left: 15%;
   width: 100%;
   align-items: center;
 }
@@ -95,26 +89,25 @@ h1, h2, h3, p, ul, li {
   color: rgb(255, 255, 255);
   display: inline-block;
   list-style-type: none;
-  font-size: 3vw;
-  font-family: 'Psy';
+  font-size: 2.5vw;
+  font-family: 'Medium';
 }
 
 .header ul li a {
-  color: #ffd000;
+  color: black;
   letter-spacing: 1px;
   text-decoration: none;
-  -webkit-text-stroke: 0.8px black;
   filter: opacity(90%)
 }
 
 .header a:hover {
-  color: #D2F189;
+  color: #1f2d00;
   text-decoration: none;
   letter-spacing: 3px;
 }
 
 .header a:active {
-  color: red;
+  color: #33ff00;
 }
 
 .header li{
@@ -130,33 +123,19 @@ h1, h2, h3, p, ul, li {
   padding-bottom: 20%;
 }
 
-.menu {
-  width: 100%; 
-  height: 100%;
-  align-items: center;
-}
-
-.content {
+/*--------- CONTENT ----------*/
+.headerContent {
   display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 75%;
+  height: 100vh;
+  margin-left: 25%;
   align-items: center;
-  flex-direction: column;
-  padding-bottom: 2vh;
+  justify-content: center;
 }
 
-
-.content h1, h2 {
-  font-family: Mulish;
-  font-weight: bold;
-  color: black;
-  padding: 1vw;
-  text-align: center;
-  font-size: 4vw;
-}
-
-.content li {
-  margin-bottom: 10px;
-}
-
+/*--------- HOME ----------*/
 div .welcomeContainer{
   display: flex;
   align-items: center;
@@ -167,36 +146,43 @@ div .welcome {
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
 }
 
 div .welcome h1 {
-  font-family: 'Wobbly';
-  color: #b75be9;
-  font-size: 9vw;
-  align-self: center;
-  margin-left: 3%;
+  font-family: 'Bold';
+  color: #000000;
+  font-size: 10vw;
+  margin-left: 4.5%;
+  padding-top: 20%;
+  margin-bottom: -2%;
   letter-spacing: 2px;
-  -webkit-text-stroke: 1.5px black;
   filter: opacity(90%);
 }
 
 div .welcome hr {
-  border: 2px solid #b75be9;
-  border-radius: 5px;
-  width: 75%;
-  filter: drop-shadow(2px 3px 2px black);
+  border: 1px solid #000000;
+  width: 90%;
 }
 
 div .welcome p {
-  font-family: 'Abril Fatface';
+  font-family: 'Regular';
   font-size: 2vw;
-  font-weight: bolder;
-  align-self: center;
-  color: #ebffc6;
-  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+  color: #000000;
+  align-self: flex-start;
+  padding-left: 5%;
+  margin-top: -0.5%;
 }
 
+.bg {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  /*filter: hue-rotate(20deg) contrast(1) brightness(0.8);*/
+  z-index: -1;
+}
+
+/*--------- ABOUT ----------*/
 .about{
   display:flex;
   flex-direction: column;
@@ -207,17 +193,16 @@ div .welcome p {
 }
 
 .about h1 {
-  color: #b75be9;
+  color: black;
   font-size: 7vw;
-  font-family: 'Psy';
-  -webkit-text-stroke: 1.2px black;
+  font-family: 'Bold';
   margin-bottom: 0;
 }
 
 .about h2 {
-  color: #b75be9;
+  color: black;
   font-size: 4vw;
-  font-family: 'Comic Sans MS';
+  font-family: 'Medium';
   -webkit-text-stroke: 0.8px black;
   margin-bottom: 0;
   margin-top: 1vw;
@@ -226,12 +211,252 @@ div .welcome p {
 }
 
 .about p {
+  font-family: 'Regular';
   width: 100%;
   font-size: 2vh;
   color: black;
   margin: 0;
 }
 
+/*--------- FAQ ----------*/
+
+/*--------- MENU ----------*/
+.menu {
+  width: 100%; 
+  height: 100%;
+  align-items: center;
+}
+
+#beer h2 {
+  font-size: 2vh;
+  color: black;
+}
+
+/*--------- WORK ----------*/
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 90vh;
+}
+
+.work h1 {
+  color: black;
+  font-size: 7vw;
+  font-family: 'Bold';
+  -webkit-text-stroke: 1.2px black;
+}
+
+.work p {
+  font-size: 2vh;
+  font-family: 'Regular';
+  color: black;
+}
+
+#arbetaForm {
+  width: 99%;
+  height: 100vh;
+}
+
+/*--------- BOOKING ----------*/
+.bContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 2vh;
+}
+
+.bContent h1, h2 {
+  font-family: 'Bold';
+  color: black;
+  padding: 1vw;
+  text-align: center;
+  font-size: 4vw;
+}
+
+.bContent li {
+  margin-bottom: 10px;
+}
+
+div .calendar {
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.confirmBookings{
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  justify-content: center;
+}
+
+.bookingsTable {
+  flex-wrap: wrap;
+  font-family: 'Regular';
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: middle;
+  background-color: bisque;
+  opacity: 0.9;
+  margin: 0 auto;
+  margin-bottom: 3vh;
+  height: 20%;
+  width: 100%;
+}
+
+.bookingsTable td, th {
+  font-family: 'Regular';
+  border-bottom: 1px solid black;
+  padding: 8px;
+  max-width: 10vw;
+  overflow: auto;
+}
+
+/* Hide scrollbar on checkbox */
+.bookingsTable :nth-child(6) {
+  overflow: hidden;
+}
+
+.bookingsTable thead th {
+  width: 25%;
+}
+
+.bookingsTable h3 {
+  font-family: 'Regular';
+  font-weight: bold;
+  color: black;
+}
+
+.BoxInfo {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  align-items: center;
+}
+
+.BoxInfo p {
+  width: 50px;
+  height: 40px;
+  margin: 0 0 0 20px; 
+  border-radius: 2px;
+}
+
+.BoxInfo h3{
+  color: black;
+  font-family: 'Regular';
+  font-size: larger;
+  margin-left: 7px;
+  letter-spacing: 0.5px;
+}
+
+.BookedBoxPub {
+  background-color: #1a7525c8;
+  opacity: 0.8;
+  border: 1px solid black;
+}
+
+.BookedBoxIndivid {
+  background-color: rgb(0, 255, 89);
+  opacity: 0.8;
+  border: 1px solid black;
+}
+
+.Free {
+  background-color: #d8dad7;
+  border: 1px solid black;
+}
+
+/*--------- CONTACT ----------*/
+
+/*--------- FOOTER ----------*/
+.fotnot {
+  position: fixed;
+  bottom: 0;
+  width: 25%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: 'Mulish', regular;
+  font-weight: lighter;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer h4 {
+  color:black;
+  font-family: 'Light';
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 13vw;
+  float: left;
+}
+
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  color: black;
+  font-weight: lighter;
+  font-family: 'Mulish', regular;
+  overflow: hidden;
+  list-style-type: none;
+  align-self: center;
+}
+
+.footer a {
+  color: #DB8C7B;
+}
+
+.footer .socialSymbol svg  {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.footer .loginSymbol svg {
+  padding:  8px;
+  right:0;
+  cursor: pointer;
+}
+
+/*--------- POP-UPS ----------*/
+.popupButton {
+  background: orange;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.popupButton:hover{
+  background: #bf1650;
+  transition: 0.3s all;
+}
+
+input[type="button"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+/*--------- TO BE CHANGED ----------*/
 .pubInfo ul {
   display: flex;
   flex-direction: column;
@@ -278,11 +503,6 @@ div .welcome p {
   width: 100%;
 }
 
-div .calendar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
 .hiddendiv2 {
   width: 55vw;
@@ -331,207 +551,8 @@ div .calendar {
   margin: 10px;
 }
 
-#arbetaForm {
-  width: 99%;
-  height: 100vh;
-}
 
-#beer h2 {
-  font-size: 2vh;
-  color: black;
-}
-
-.work {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
-  height: 90vh;
-}
-
-.work h1 {
-  color: #b75be9;
-  font-size: 7vw;
-  font-family: 'Psy';
-  -webkit-text-stroke: 1.2px black;
-}
-
-.work p {
-  font-size: 2vh;
-  color: black;
-}
-
-.confirmBookings{
-  width: 90%;
-  height: 100%;
-  text-align: center;
-  overflow: auto;
-  justify-content: center;
-}
-
-.bookingsTable {
-  flex-wrap: wrap;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border-collapse: collapse;
-  text-align: left;
-  vertical-align: middle;
-  background-color: bisque;
-  opacity: 0.9;
-  margin: 0 auto;
-  margin-bottom: 3vh;
-  height: 20%;
-  width: 100%;
-}
-
-.bookingsTable td, th {
-  font-family: Mulish;
-  border-bottom: 1px solid black;
-  padding: 8px;
-  max-width: 10vw;
-  overflow: auto;
-}
-
-/* Hide scrollbar on checkbox */
-.bookingsTable :nth-child(6) {
-  overflow: hidden;
-}
-
-.bookingsTable thead th {
-  width: 25%;
-}
-
-.bookingsTable h3 {
-  font-family: Mulish;
-  font-weight: bold;
-  color: black;
-}
-
-.BoxInfo {
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  align-items: center;
-}
-
-.BoxInfo p {
-  width: 50px;
-  height: 40px;
-  margin: 0 0 0 20px; 
-  border-radius: 2px;
-}
-
-.BoxInfo h3{
-  color: black;
-  font-size: larger;
-  margin-left: 7px;
-  letter-spacing: 0.5px;
-}
-
-.BookedBoxPub {
-  background-color: #DB8C7B;
-}
-
-.BookedBoxIndivid {
-  background-color: burlywood;
-}
-
-.Free {
-  background-color: #EBD2CD;
-}
-
-.fotnot {
-  position: fixed;
-  bottom: 0;
-  width: 25%;
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-family: 'Mulish', regular;
-  font-weight: lighter;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer h4, h1 {
-  color:black;
-}
-
-.footer h1 {
-  font-size: 15px;
-  width: 100%;
-}
-
-.footer h4 {
-  font-size: 10px;
-  font-weight: bold;
-  margin-right: 7vw;
-  float: left;
-}
-
-.footer ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none; 
-  padding: 0;
-  margin: 0;
-}
-
-.footer ul li {
-  color: black;
-  font-weight: lighter;
-  font-family: 'Mulish', regular;
-  overflow: hidden;
-  list-style-type: none;
-  align-self: center;
-}
-
-.footer a {
-  color: #DB8C7B;
-}
-
-.footer .socialSymbol svg  {
-  padding: 8px;
-  cursor: pointer;
-}
-
-.footer .loginSymbol svg {
-  padding:  8px;
-  right:0;
-  cursor: pointer;
-}
-
-.contentCalender .footer {
-  position: fixed;
-}
-
-.popupButton {
-  background: orange;
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  margin-top: 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: 100;
-}
-
-.popupButton:hover{
-  background: #bf1650;
-  transition: 0.3s all;
-}
-
-input[type="button"]:active {
-  transition: 0.3s all;
-  transform: translateY(3px);
-  border: 1px solid transparent;
-  opacity: 0.8;
-}
-
+/*--------- MOBILE ----------*/
 
 @media only screen and (max-width: 1000px) {
 

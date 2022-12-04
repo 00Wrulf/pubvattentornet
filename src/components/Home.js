@@ -14,13 +14,11 @@ class Home extends Component {
   render () {
     return (
       <div className='welcomeContainer'>
-        <img className='bg' src={bg} />
+        {/* <img className='bg' src={bg} /> */}
         <div className='welcome'>
           <h1>Pub Vattentornet</h1>
-
           <hr />
-
-          <p>Finöl till fulölspriser vid Lennings gata 2, Norrköping!</p>
+          <p>Finöl til fulöls-priser!</p>
         </div>
       </div>
     )
