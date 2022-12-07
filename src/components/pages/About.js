@@ -16,7 +16,7 @@ class About extends Component {
             Pub Vattentornet har den stora äran att vara inrymd inuti ett av Sveriges äldsta bevarade vattentorn!
             Tornet byggdes i början av 1900-talet och ägs idag av HSB, vilka också har haft vänligheten att bistå oss med lokalerna.
             Själva Pub Vattentornet består dels av pubdelen samt en extra allrumsdel. Puben i sig är utrustad med två tappar för öl och cider,
-            samt två rejäla kylar för all resterande dryck som bör vara kall!
+            samt tre kylar för all resterande dryck som bör vara kall!
         </p>
         <p>
           <br />

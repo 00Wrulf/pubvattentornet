@@ -7,13 +7,14 @@
 
 /* Custom CSS file for React Big Calendar package */
 .dateIsBooked {
-    background:rgb(0, 255, 89) !important;
+    background: red !important;
+    color: white !important;
 }
 
 .react-calendar {
     max-width: 79%;
-    background: #b5b5b5;
-    font-family: 'Regular';
+    background: white;
+    font-family: 'Times New Roman', Times, serif;
     line-height: 1.125em;
     text-transform: uppercase;
   }
@@ -42,14 +43,14 @@
   .react-calendar__navigation button {
     min-width: 44px;
     background: none;
-    font-family: 'Regular';
+    font-family: 'Times New Roman', Times, serif;
     color: black;
     border: 1.2px solid black;
     text-transform: uppercase;
   }
   .react-calendar__navigation button:enabled:hover,
   .react-calendar__navigation button:enabled:focus {
-    background-color: #35ff23;
+    background-color: #ff8069;
   }
   .react-calendar__navigation button[disabled] {
     background-color: #f0f0f0;
@@ -93,18 +94,19 @@
     border: .5px black solid;
   }
   .react-calendar__tile:disabled {
-    background-color: #007d0fc8;
-    opacity: 0.8;
+    background-color: #ffffff;
     color: black;
+    opacity: 0.3;
     text-decoration: line-through;
   }
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
-    background-color: #35ff23;
+    background-color: #d60000;
+    color: white;
   }
   .react-calendar__tile--now {
     /*background: #ffff76;*/
-    border: rgb(17, 148, 48) 2px solid !important;
+    border: #ff5069 2px solid !important;
   }
   .react-calendar__tile--now:enabled:hover,
   .react-calendar__tile--now:enabled:focus {

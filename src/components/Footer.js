@@ -1,6 +1,4 @@
 import React from 'react'
-import { ImFacebook2, ImInstagram } from 'react-icons/im'
-
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
 
 import VattentornetDataService from '../services/vattentornet.service'

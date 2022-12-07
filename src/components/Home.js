@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import VattentornetDataService from '../services/vattentornet.service'
-import bg from '../images/background/home.jpeg'
+// import bg from '../images/background/home.jpeg'
+
 class Home extends Component {
   componentDidMount () {
     VattentornetDataService.userAuthorization()
