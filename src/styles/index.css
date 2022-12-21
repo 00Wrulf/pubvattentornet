@@ -3,28 +3,13 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 @font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Light.ttf);
-  font-family: 'Light';
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Regular.ttf);
+  font-family: 'Regular'
 }
 
 @font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Regular.ttf);
-  font-family: 'Regular';
-}
-
-@font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Medium.ttf);
-  font-family: 'Medium';
-}
-
-@font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/ClashDisplay-Bold.ttf);
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Black.ttf);
   font-family: 'Bold';
-}
-
-@font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/medio.otf);
-  font-family: 'Medio';
 }
 
 /*--------- BODY ----------*/
@@ -36,7 +21,7 @@ html, body {
 }
 
 body {
-  background-color: #faf5ef;
+  background-color: rgb(0, 0, 0);
 }
 /*
 h1, h2, h3, p, ul, li {
@@ -52,6 +37,13 @@ h1, h2, h3, p, ul, li {
   flex-shrink: 0;
 }
 
+.bg {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
 /*--------- WRAPPER ----------*/
 
 .hwrapper{
@@ -62,18 +54,22 @@ h1, h2, h3, p, ul, li {
   height: 100vh;
 }
 
+.title {
+  font-family: 'Bold';
+  width: 100%;
+  font-size: 9.3vw;
+  color: white;
+  margin: 0;
+  margin-top: -2%;
+}
 
 /*--------- HEADER ----------*/
 .header {
   width: 25%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-shrink: 0;
-  align-items: center;
-  position: fixed;
+  height: 90%;
+  margin-top: 10%;
   top: 0;
-  border-right: 1px solid black;
+  position: fixed;
 }
 
 .header #boka a {
@@ -81,26 +77,27 @@ h1, h2, h3, p, ul, li {
 }
 
 .header ul {
-  margin-left: 25%;
+  margin-top: 10%;
   width: 100%;
-  align-items: center;
-  display: inline;
 }
 
 .header ul li {
   font-size: 1vw;
-  /*font-family: 'Regular';*/
+  font-family: 'Regular';
 }
 
 .header ul li a {
-  color: #1f3d0c;
+  color: white;
   letter-spacing: 1px;
   text-decoration: none;
-  filter: opacity(90%)
+  filter: opacity(90%);
+  transition: 0.3s all;
+  display: inline;
 }
 
+
 .header a:hover {
-  color: #2a5310;
+  color: #62ff00;
   text-decoration: none;
   letter-spacing: 10px;
   transition: 0.3s all;
@@ -110,10 +107,12 @@ h1, h2, h3, p, ul, li {
   color: white;
 }
 
+
 .header li{
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   display: block;
   cursor: pointer;
+  display: inline;
 }
 /*
 .hlogo {
@@ -129,9 +128,7 @@ h1, h2, h3, p, ul, li {
   flex-direction: row;
   flex-shrink: 0;
   width: 75%;
-  height: 100vh;
   margin-left: 25%;
-  align-items: center;
   justify-content: center;
 }
 
@@ -152,7 +149,7 @@ h1, h2, h3, p, ul, li {
 
 .welcome h1 {
   font-family: 'Times New Roman', Times, serif;
-  color: #1f3d0c;
+  color: white;
   font-size: 8vw;
   margin: 0;
   letter-spacing: 2px;
@@ -172,49 +169,48 @@ h1, h2, h3, p, ul, li {
   padding-left: 5%;
 }
 
-.bg {
-  height: 100vh;
+/*.poster {
+  height: 70%;
   background-size: cover;
   background-position: center;
-  position: fixed;
-  /*filter: hue-rotate(20deg) contrast(1) brightness(0.8);*/
+  margin-top: -10%;
   z-index: -1;
-}
+}*/
 
 
 /*--------- ABOUT ----------*/
 .about{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
   width: 90%;
   height: 100%;
-  margin: 0;
-  text-align: center;
+  margin-top: 5%;
+  text-align: left;
 }
 
 .about h1 {
-  color: #1f3d0c;
+  color: white;
   font-size: 2vw;
-  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  font-family: 'Regular';
   margin: 0;
 }
 
 .about h2 {
-  color: #1f3d0c;
+  color: white;
   font-size: 1.5vw;
-  font-family: 'Times New Roman', Times, serif;
-  margin-bottom: 0;
+  font-family: 'Regular';
+  letter-spacing: 1px;
   margin-top: 1vw;
   width: 100%;
 }
 
 .about p {
-  font-family: 'Times New Roman', Times, serif;
-  width: 100%;
+  font-family: 'Regular';
+  color: white;
   font-size: 0.9vw;
-  color: black;
+  letter-spacing: 0.3px;
   margin: 0;
 }
 
@@ -222,35 +218,33 @@ h1, h2, h3, p, ul, li {
 .faq{
   display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 90%;
   height: 100%;
-  margin: 0;
-  text-align: center;
+  margin-top: 5%;
+  text-align: left;
 }
 
 .faq h1 {
-  color: #1f3d0c;
+  color: white;
   font-size: 3vh;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Regular';
   margin: 0;
 }
 
 .faq h2 {
-  color: #1f3d0c;
+  color: white;
   font-size: 2vh;
-  font-family: 'Times New Roman', Times, serif;
-  margin: -1vh;
+  font-family: 'Regular';
   width: 100%;
+  margin-bottom: 0.5%;
 }
 
 .faq p {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Regular';
   width: 100%;
   font-size: 1.5vh;
-  color: black;
-  margin-top: -0.5vw;
+  color: white;
+  margin: 0;
 }
 
 /*--------- MENU ----------*/
@@ -258,11 +252,13 @@ h1, h2, h3, p, ul, li {
   width: 100%; 
   height: 100%;
   align-items: center;
+  margin-top: 5%;
 }
 
 #beer h2 {
   font-size: 2vh;
-  color: #1f3d0c;
+  color: white;
+  font-family: 'Regular';
 }
 
 /*--------- WORK ----------*/
@@ -275,20 +271,20 @@ h1, h2, h3, p, ul, li {
 }
 
 .work h1 {
-  color: #1f3d0c;
+  color: white;
   font-size: 3vw;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Regular';
 }
 
 .work p {
   font-size: 1vw;
-  font-family: 'Times New Roman', Times, serif;
-  color: #1f3d0c;
+  font-family: 'Regular';
+  color: white;
 }
 
 #arbetaForm {
-  width: 99%;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 /*--------- BOOKING ----------*/
@@ -300,10 +296,8 @@ h1, h2, h3, p, ul, li {
 }
 
 .bContent h1, h2 {
-  font-family: 'Times New Roman', Times, serif;
-  color: #1f3d0c;
-  padding: 1vw;
-  text-align: center;
+  font-family: 'Regular';
+  color: white;
   font-size: 2vw;
 }
 
@@ -328,11 +322,11 @@ div .calendar {
 
 .bookingsTable {
   flex-wrap: wrap;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Regular';
   border-collapse: collapse;
+  color: white;
   text-align: left;
   vertical-align: middle;
-  background-color: bisque;
   opacity: 0.9;
   margin: 0 auto;
   margin-bottom: 3vh;
@@ -341,8 +335,8 @@ div .calendar {
 }
 
 .bookingsTable td, th {
-  font-family: 'Times New Roman', Times, serif;
-  border-bottom: 1px solid #1f3d0c;
+  font-family:  'Regular';
+  border-bottom: 1px solid white;
   padding: 8px;
   max-width: 10vw;
   overflow: auto;
@@ -358,8 +352,8 @@ div .calendar {
 }
 
 .bookingsTable h3 {
-  font-family: 'Times New Roman', Times, serif;
-  color: #1f3d0c;
+  font-family: 'Regular';
+  color: white;
 }
 
 .BoxInfo {
@@ -374,6 +368,7 @@ div .calendar {
   height: 40px;
   margin: 0 0 0 20px; 
   border-radius: 2px;
+  color: white;
 }
 
 /*.BoxInfo h3{
@@ -422,8 +417,8 @@ div .calendar {
 }
 
 .footer h4 {
-  color:#1f3d0c;
-  font-family: 'Times New Roman', Times, serif;
+  color:white;
+  font-family: 'Regular';
   font-size: 10px;
   margin-right: 10vw;
   float: left;
@@ -443,10 +438,6 @@ div .calendar {
   overflow: hidden;
   list-style-type: none;
   align-self: center;
-}
-
-.footer a {
-  color: black;
 }
 
 .footer .socialSymbol svg  {
