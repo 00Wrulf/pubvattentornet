@@ -56,16 +56,16 @@ class Faq extends Component {
         <p>Priset beror väldigt mycket på vad du beställer! Vi har ett brett sortiment av öl, cider, vin, och alkoholfria drycker samt mat och snacks. Du kan läsa mer om våra priser på vår meny.</p>
         <br />
         <h2>Boka?</h2>
-        <p>För att boka gör du en bokningsförfrågan via <a>boka</a> sidan. Du får sedan ett mail med bekräftelse när din förfrågan är godkänd!</p>
+        <p>För att boka gör du en bokningsförfrågan via boka sidan. Du får sedan ett mail med bekräftelse när din förfrågan är godkänd!</p>
         <br />
         <h2>Betala?</h2>
         <p>Vi tar endast kortbetalning, dvs inga kontanter och ingen swish!</p>
         <br />
         <h2>Jobba?</h2>
-        <p>Om du vill jobba hos oss kan du svara på enkäten som finns under fliken <a>jobba</a>. Vi kommer sedan att kontakta dig angående pass!</p>
+        <p>Om du vill jobba hos oss kan du svara på enkäten som finns under fliken jobba. Vi kommer sedan att kontakta dig angående pass!</p>
         <br />
         <h2>Kontakt?</h2>
-        <p>Du kan hitta all kontaktinformation på vår <a>kontakt</a> sida.</p>
+        <p>Du kan hitta all kontaktinformation på vår kontakt sida.</p>
       </div>
     )
   }

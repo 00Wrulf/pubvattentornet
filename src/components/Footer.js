@@ -14,11 +14,10 @@ function Footer (props) {
     <footer className='footer'>
       <ul>
         <li>
-
-          {!user
-            ? <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogIn color='black' size={25} /></a>
-            : <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogOut color='red' size={25} /></a>}
           <h4>© Pub Vattentornet {new Date().getFullYear()}</h4>
+          {!user
+            ? <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogIn color='rgb(51, 69, 71)' size={25} /></a>
+            : <a onClick={openPopup} target='_blank' className='loginSymbol'><FiLogOut color='red' size={25} /></a>}
         </li>
 
       </ul>

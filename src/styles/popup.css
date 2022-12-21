@@ -1,3 +1,8 @@
+@font-face {
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Regular.ttf);
+  font-family: 'Regular'
+}
+
 /* Common CSS-file for all popups */
 .popupHeader {
     color:black;
@@ -6,7 +11,7 @@
 .popup-content {
     margin: auto;
     background:white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Regular';
     width: 40%;
     padding: 2vw;
     text-align: center;
@@ -97,7 +102,7 @@
   }
   
   input[type="submit"]:hover:enabled, .popupButton:hover:enabled {
-    background: red;
+    background: rgb(68, 255, 0);
     color: black;
     transition: 0.3s all;
   }
@@ -138,7 +143,5 @@
       overflow-y: auto;
       padding-bottom: 20vh;
     }
-
-  
   }
 

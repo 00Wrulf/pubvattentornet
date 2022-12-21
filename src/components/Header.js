@@ -6,6 +6,7 @@ import Faq from './pages/Faq'
 import Beer from './pages/Beer'
 import Work from './pages/Work'
 import About from './pages/About'
+import Contact from './pages/Contact'
 import logo from '../images/logo/placeholder.jpeg'
 import Footer from './Footer'
 import Popup from 'reactjs-popup'
@@ -60,10 +61,11 @@ function Header () {
           <Route path='/Beer' component={Beer} />
           <Route path='/Work' component={Work} />
           <Route path='/Booking' component={Booking} />
+          <Route path='/Contact' component={Contact} />
           {user
             ? <>
               <Route path='/Booking' component={Booking} />
-            </> : <p> Unauthorized </p>}
+              </> : <p> Unauthorized </p>}
           <Route render={() => <h1>Oops, denna sida finns ej..</h1>} />
         </Switch>
       </div>
