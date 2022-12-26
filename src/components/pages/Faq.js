@@ -41,7 +41,7 @@ class Faq extends Component {
     return (
       <div className='faq'>
         <h1>FAQ</h1>
-        <h2>Vart?</h2>
+        <h2>Var?</h2>
         <p>Lennings Gata 2, Norrköping</p>
         <br />
         <h2>När?</h2>

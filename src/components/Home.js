@@ -13,8 +13,10 @@ class Home extends Component {
 
   render () {
     return (
-      <div className='welcomeContainer'>
-        {/* <img className='bg' src={bg} /> */}
+      <div className='home'>
+        <h1>TOR: 19-01</h1>
+        <h1>FRE: 19-01</h1>
+        <p>Lennings Gata 2</p>
       </div>
     )
   }
