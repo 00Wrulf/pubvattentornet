@@ -45,13 +45,11 @@ function Main () {
   }
 
   return (
-    <div style={bg} className='bg'>
-      <Header />
-
-      <Popup ref={loginPopup}><LoginPopup closePopup={closePopup} /></Popup>
-      <Popup ref={logoutPopup}><LogoutPopup closePopup={closePopup} /></Popup>
-
-      <Footer openPopup={openPopup} />
+    <div className='reno'>
+      <h1>Hej alla tornetentusiaster!</h1>
+      <p> Vi håller just nu på med en välbehövd renovering av Vattentornet och därmed kommer allrummet inte vara bokbart mellan 1-31 januari! Om ni har några frågor skicka gärna ett mail till <a href='mailto: info@vattentor.net'>info@vattentor.net</a></p>
+      <br />
+      <p> Vi hoppas att ni kommer tillbaka snart för att se vad vi har gjort! </p>
     </div>
   )
 };

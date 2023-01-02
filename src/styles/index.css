@@ -10,6 +10,43 @@ body {
   background-color: black;
 }
 
+.reno {
+  background-color: black;
+  height: 100vh;
+  width: 90vw;
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reno h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 6vw;
+  margin-bottom: 3vh;
+  color: #FFF;
+  text-align: center;
+}
+
+.reno p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2vw;
+  color: #FFF;
+  text-align: center;
+}
+
+.reno a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2vw;
+  color: #FFF;
+  text-align: center;
+}
+
+.reno a:hover {
+  color: #37ff00;
+}
+
 h1, h2, h3, p, ul, li {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 100;
