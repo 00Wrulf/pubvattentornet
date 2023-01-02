@@ -7,7 +7,6 @@ import Beer from './pages/Beer'
 import Work from './pages/Work'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import logo from '../images/logo/placeholder.jpeg'
 import Footer from './Footer'
 import Popup from 'reactjs-popup'
 import LoginPopup from './popups/Login'
@@ -33,7 +32,6 @@ function Header () {
   return (
     <Router>
       <div className='header'>
-        {/* <Link to='/Home'><img className='hlogo' src={logo} alt='Home' /></Link> */}
         <ul>
           <li><Link to='/Home'>HOME</Link></li>
           <br />
