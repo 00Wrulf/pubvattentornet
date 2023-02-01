@@ -41,31 +41,28 @@ class Faq extends Component {
     return (
       <div className='faq'>
         <h1>FAQ</h1>
-        <h2>Var?</h2>
-        <p>Lennings Gata 2, Norrköping</p>
-        <br />
-        <h2>När?</h2>
-        <p>Torsdagar och fredagar 17:00-sent, men senast till 01:00.</p>
+        <h2>Var och När?</h2>
+        <p>- Torsdagar och Fredagar <span className='colored'>19:00-sent</span> vid Lennings Gata 2, Norrköping. men senast till <span className='colored'>01:00</span>.</p>
         <br />
         <h2>Sortiment?</h2>
-        <p>Vi har öl, cider, vin, och alkoholfritt.</p>
-        <p>Maten finns i form av Billys panpizza och Karins lasagne.</p>
-        <p>Vi har även ölkorv, chips, och popcorn som snacks.</p>
+        <p>- <span className='colored'>Dryck</span>: Öl, Cider, Vin, och alkoholfritt.</p>
+        <p>- <span className='colored'>Mat</span>: Billys panpizza och Karins lasagne.</p>
+        <p>- <span className='colored'>Snacks</span>: Ölkorv, chips, och popcorn.</p>
         <br />
         <h2>Pris?</h2>
-        <p>Priset beror väldigt mycket på vad du beställer! Vi har ett brett sortiment av öl, cider, vin, och alkoholfria drycker samt mat och snacks. Du kan läsa mer om våra priser på vår meny.</p>
+        <p>- Priset beror väldigt mycket på <span className='colored'>vad du beställer</span>! Vi har ett brett sortiment av öl, cider, vin, och alkoholfria drycker samt mat och snacks.</p>
         <br />
         <h2>Boka?</h2>
-        <p>För att boka gör du en bokningsförfrågan via boka sidan. Du får sedan ett mail med bekräftelse när din förfrågan är godkänd!</p>
+        <p>- För att boka gör du en bokningsförfrågan via <span className='colored'>boka</span> sidan. Du får sedan ett mail med bekräftelse när din förfrågan är godkänd!</p>
         <br />
         <h2>Betala?</h2>
-        <p>Vi tar endast kortbetalning, dvs inga kontanter och ingen swish!</p>
+        <p>- Vi tar <span className='colored'>endast</span> kortbetalning, dvs inga kontanter och ingen swish!</p>
         <br />
         <h2>Jobba?</h2>
-        <p>Om du vill jobba hos oss kan du svara på enkäten som finns under fliken jobba. Vi kommer sedan att kontakta dig angående pass!</p>
+        <p>- Om du vill jobba hos oss kan du svara på enkäten som finns under fliken <span className='colored'>jobba</span>. Vi kommer sedan att kontakta dig angående pass!</p>
         <br />
         <h2>Kontakt?</h2>
-        <p>Du kan hitta all kontaktinformation på vår kontakt sida.</p>
+        <p>- Du kan hitta all kontaktinformation på vår <span className='colored'>kontakt</span> sida.</p>
       </div>
     )
   }

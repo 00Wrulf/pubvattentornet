@@ -231,7 +231,11 @@ h1, h2, h3, p, ul, li {
   width: 100%;
   font-size: 1.1vw;
   color: white;
-  margin: 0;
+  margin-top: 1px;
+}
+
+.faq .colored {
+  color: rgb(55, 255, 0);
 }
 
 /*--------- MENU ----------*/
@@ -255,7 +259,7 @@ h1, h2, h3, p, ul, li {
   flex-direction: column;
   align-items: center;
   width: 90%;
-  height: 90vh;
+  height: 80vh;
 }
 
 .work h1 {
@@ -593,7 +597,7 @@ input[type="button"]:active {
   body {
     margin: 0;
     padding: 0;
-    max-width: 100%;
+    max-width: 100vw;
   }
 
   .title {
