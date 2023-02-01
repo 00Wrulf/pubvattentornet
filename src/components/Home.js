@@ -14,8 +14,9 @@ class Home extends Component {
   render () {
     return (
       <div className='home'>
-        <h1>TOR: 19-01</h1>
-        <h1>FRE: 19-01</h1>
+        <h1>TOR: 19-SENT</h1>
+        <h1>FRE: 19-SENT</h1>
+        <h2>(Men senast till 01!)</h2>
         <p>Lennings Gata 2</p>
       </div>
     )

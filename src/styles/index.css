@@ -149,12 +149,20 @@ h1, h2, h3, p, ul, li {
   margin: 0;
 }
 
+.home h2 {
+  color: rgb(55, 255, 0);
+  font-size: 1vw;
+  font-family: 'Regular';
+  letter-spacing: 8px;
+  margin-top: 0;
+}
+
 .home p {
   color: white;
   font-size: 1.2vw;
   font-family: 'Regular';
   letter-spacing: 15.5px;
-  margin-top: 0;
+  margin-top: 40%;
 }
 
 /*--------- ABOUT ----------*/
@@ -279,6 +287,15 @@ h1, h2, h3, p, ul, li {
   font-family: 'Regular';
   color: white;
   font-size: 2vw;
+}
+
+.bContent p {
+  font-family: 'Regular';
+  color: white;
+  width: 80%;
+  font-size: 1.1vw;
+  margin-top: 5%;
+  text-align: center;
 }
 
 .bContent li {
@@ -633,7 +650,13 @@ input[type="button"]:active {
     font-size: 10vw;
   }
 
+  .home h2 {
+    font-size: 2vw;
+    margin-bottom: 5%;
+  }
+
   .home p {
+    margin-top: 80%;
     font-size: 2.2vw;
     letter-spacing: 7px;
   }
@@ -714,6 +737,16 @@ input[type="button"]:active {
   }
 
   /*--------- BOOKINGS ----------*/
+  .bContent h1 {
+    font-size: 5vw;
+    margin-bottom: 5%;
+  }
+
+  .bContent p {
+    font-size: 2.3vw;
+    margin-bottom: 3%;
+  }
+
   .bookingsTable td, th{
     font-family: Mulish;
     overflow: hidden;

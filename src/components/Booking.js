@@ -102,6 +102,18 @@ function Booking () {
           tileDisabled={tileDisabled}
         />
       </div>
+
+      {<p>Bokning av allrummet är endast till för boende i vattentornet (Går att lösa för t.ex föreningar i specialfall, kontakta oss för mer info).
+        För att boka allrummet behöver vi ditt lägenhetsnummer i tornet samt en beskrivning av vad lokalerna skall användas till.
+        De regler som gäller för lokalerna är väldigt enkla.
+        Ni ser till att allting går lugnt till, samt ser till att lokalerna är nystädade senaste klockan 12 dagen efter.
+        Ni skall alltså sopa samt MOPPA golv (glöm inte golvet vid hissarna samt utanför toaletterna!).
+        Ni skall även tömma papperskorgarna på toaletterna, samt torka av bord och övriga ytor.
+        Om någonting går sönder är ni ersättningsskyldiga.
+        Är städningen inte ordentligt utförd inom sagda tider tar vi ut en avgift för att själva utföra denna.
+        Sopkvast och mopp finns i allrummets städskåp. Städskåpet finns i hörnet mot puben.
+       </p>}
+
       {/* Om inloggad som admin, rendera bokningshanterare */}
       {user && <ShowBookingRequests confirmedBookings={confirmedBookings} />}
 
