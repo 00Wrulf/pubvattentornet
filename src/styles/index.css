@@ -98,7 +98,7 @@ h1, h2, h3, p, ul, li {
 
 
 .header a:hover {
-  color: #62ff00;
+  color: #20b479;
   text-decoration: none;
   letter-spacing: 10px;
   transition: 0.3s all;
@@ -150,7 +150,7 @@ h1, h2, h3, p, ul, li {
 }
 
 .home h2 {
-  color: rgb(55, 255, 0);
+  color: #20b479;
   font-size: 1vw;
   font-family: 'Regular';
   letter-spacing: 8px;
@@ -235,7 +235,7 @@ h1, h2, h3, p, ul, li {
 }
 
 .faq .colored {
-  color: rgb(55, 255, 0);
+  font-family: 'Bold';
 }
 
 /*--------- MENU ----------*/
@@ -421,7 +421,7 @@ div .calendar {
 }
 
 .contact a:hover {
-  color: #62ff00;
+  color: #20b479;
   letter-spacing: 2px;
   transition: 0.3s all;
 }
@@ -440,7 +440,7 @@ div .calendar {
 }
 
 .fIcon:hover, .iIcon:hover {
-  color: #62ff00;
+  color: #20b479;
   height: 6.5vw;
   width: 6.5vw;
   transition: 0.2s all;
