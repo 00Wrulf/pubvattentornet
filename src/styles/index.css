@@ -1,16 +1,8 @@
 
 /*--------- FONTS ----------*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 
-@font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Regular.ttf);
-  font-family: 'Regular'
-}
-
-@font-face {
-  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Black.ttf);
-  font-family: 'Bold';
-}
 
 /*--------- BODY ----------*/
 
@@ -25,10 +17,8 @@ body {
 }
 
 h1, h2, h3, p, ul, li {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 100;
   transition: all 0.1s;
-}*/
+}
 
 .container {
   display: flex;
@@ -56,11 +46,13 @@ h1, h2, h3, p, ul, li {
 }
 
 .title {
-  font-family: 'Bold';
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 900;
   width: 100%;
-  font-size: 9.3vw;
+  font-size: 9.4vw;
   color: white;
   margin: 0;
+  text-align: center;
   margin-top: -2%;
 }
 
@@ -84,7 +76,7 @@ h1, h2, h3, p, ul, li {
 
 .header ul li {
   font-size: 1vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
 }
 
 .header ul li a {
@@ -145,14 +137,16 @@ h1, h2, h3, p, ul, li {
 .home h1 {
   color: white;
   font-size: 5vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
   margin: 0;
 }
 
 .home h2 {
   color: #20b479;
   font-size: 1vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
   letter-spacing: 8px;
   margin-top: 0;
 }
@@ -160,7 +154,7 @@ h1, h2, h3, p, ul, li {
 .home p {
   color: white;
   font-size: 1.2vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   letter-spacing: 15.5px;
   margin-top: 40%;
 }
@@ -180,21 +174,21 @@ h1, h2, h3, p, ul, li {
   color: white;
   font-size: 2vw;
   letter-spacing: 1px;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   margin: 0;
 }
 
 .about h2 {
   color: white;
   font-size: 1.7vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   letter-spacing: 1px;
   margin-top: 1vw;
   width: 100%;
 }
 
 .about p {
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   color: white;
   font-size: 1.1vw;
   letter-spacing: 0.3px;
@@ -214,20 +208,22 @@ h1, h2, h3, p, ul, li {
 .faq h1 {
   color: white;
   font-size: 2vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
   margin: 0;
 }
 
 .faq h2 {
   color: white;
   font-size: 1.3vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
   width: 100%;
   margin: 0;
 }
 
 .faq p {
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   width: 100%;
   font-size: 1.1vw;
   color: white;
@@ -235,7 +231,8 @@ h1, h2, h3, p, ul, li {
 }
 
 .faq .colored {
-  font-family: 'Bold';
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 900;
 }
 
 /*--------- MENU ----------*/
@@ -249,7 +246,7 @@ h1, h2, h3, p, ul, li {
 .beer h1 {
   color: white;
   font-size: 2vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   margin: 0;
 }
 
@@ -265,12 +262,12 @@ h1, h2, h3, p, ul, li {
 .work h1 {
   color: white;
   font-size: 3vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
 }
 
 .work p {
   font-size: 1.1vw;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   color: white;
 }
 
@@ -288,13 +285,13 @@ h1, h2, h3, p, ul, li {
 }
 
 .bContent h1, h2 {
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   color: white;
   font-size: 2vw;
 }
 
 .bContent p {
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   color: white;
   width: 80%;
   font-size: 1.1vw;
@@ -323,7 +320,7 @@ div .calendar {
 
 .bookingsTable {
   flex-wrap: wrap;
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   border-collapse: collapse;
   color: white;
   text-align: left;
@@ -336,7 +333,7 @@ div .calendar {
 }
 
 .bookingsTable td, th {
-  font-family:  'Regular';
+  font-family: 'Satoshi', sans-serif;
   border-bottom: 1px solid white;
   padding: 8px;
   max-width: 10vw;
@@ -353,7 +350,7 @@ div .calendar {
 }
 
 .bookingsTable h3 {
-  font-family: 'Regular';
+  font-family: 'Satoshi', sans-serif;
   color: white;
 }
 
