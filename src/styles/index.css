@@ -1,4 +1,18 @@
+
+/*--------- FONTS ----------*/
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+@font-face {
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Regular.ttf);
+  font-family: 'Regular'
+}
+
+@font-face {
+  src: url(/Users/varulv/Documents/Vattentornet/pubvattentornet/public/fonts/Satoshi-Black.ttf);
+  font-family: 'Bold';
+}
+
+/*--------- BODY ----------*/
 
 html, body {
   height: 100%;
@@ -7,209 +21,514 @@ html, body {
 }
 
 body {
-  background-color: black;
-}
-
-.reno {
-  background-color: black;
-  height: 100vh;
-  width: 90vw;
-  padding-left: 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.reno h1 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 6vw;
-  margin-bottom: 3vh;
-  color: #FFF;
-  text-align: center;
-}
-
-.reno p {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2vw;
-  color: #FFF;
-  text-align: center;
-}
-
-.reno a {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2vw;
-  color: #FFF;
-  text-align: center;
-}
-
-.reno a:hover {
-  color: #37ff00;
+  background-color: rgb(0, 0, 0);
 }
 
 h1, h2, h3, p, ul, li {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 100;
   transition: all 0.1s;
-}
+}*/
 
-.header {
-  width: 100%;
+.container {
   display: flex;
+  flex-direction: column;
+  max-width: 100%;
   flex-shrink: 0;
-  justify-content: flex-end;
-  align-items: center;
 }
 
-/* Logo */
-.header :nth-child(1) {
-  margin-right: auto;
-  padding-left: 2%;
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: brightness(0.55);
 }
 
-.header :nth-child(2) {
-  margin-right: 19%;
-  margin-left: 10%;
-  margin-top: 10px;
+/*--------- WRAPPER ----------*/
+
+.hwrapper{
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100vh;
 }
 
-/* Logo */
-.header :nth-child(3) {
-  margin-left: auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
+.title {
+  font-family: 'Bold';
+  width: 100%;
+  font-size: 9.3vw;
+  color: white;
+  margin: 0;
+  margin-top: -2%;
 }
 
-.header #boka {
-  background-color: #125446;
-  border-radius: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+/*--------- HEADER ----------*/
+.header {
+  width: 25%;
+  height: 90%;
+  margin-top: 10%;
+  top: 0;
+  position: fixed;
+}
+
+.header #boka a {
+  color: white;
 }
 
 .header ul {
-  padding-right: 2%;
-  overflow: hidden;
+  margin-top: 10%;
+  width: 100%;
 }
 
 .header ul li {
-  color: #FFF;
-  display: inline;
-  list-style-type: none;
-  margin: 0;
-  font-size: 1.5vw;
+  font-size: 1vw;
+  font-family: 'Regular';
 }
 
 .header ul li a {
-  color: #FFF;
+  color: white;
+  letter-spacing: 1px;
   text-decoration: none;
-  padding: 2vw !important;
+  filter: opacity(90%);
+  transition: 0.3s all;
+  display: inline;
 }
 
-.content {
+
+.header a:hover {
+  color: #20b479;
+  text-decoration: none;
+  letter-spacing: 10px;
+  transition: 0.3s all;
+}
+
+.header a:active {
+  color: white;
+}
+
+
+.header li{
+  margin-bottom: 4px;
+  display: block;
+  cursor: pointer;
+  display: inline;
+}
+/*
+.hlogo {
+  height: 200px;
+  top: 0;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+*/
+/*--------- CONTENT ----------*/
+.headerContent {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  width: 75%;
+  margin-left: 25%;
+  justify-content: center;
+}
+
+/*--------- HOME ----------*/
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 90%;
+  height: 100%;
+}
+
+.home h1 {
+  color: white;
+  font-size: 5vw;
+  font-family: 'Regular';
+  margin: 0;
+}
+
+.home h2 {
+  color: #20b479;
+  font-size: 1vw;
+  font-family: 'Regular';
+  letter-spacing: 8px;
+  margin-top: 0;
+}
+
+.home p {
+  color: white;
+  font-size: 1.2vw;
+  font-family: 'Regular';
+  letter-spacing: 15.5px;
+  margin-top: 40%;
+}
+
+/*--------- ABOUT ----------*/
+.about{
+  display:flex;
+  flex-direction: column;
+  align-items: left;
+  width: 90%;
+  height: 100%;
+  margin-top: 5%;
+  text-align: left;
+}
+
+.about h1 {
+  color: white;
+  font-size: 2vw;
+  letter-spacing: 1px;
+  font-family: 'Regular';
+  margin: 0;
+}
+
+.about h2 {
+  color: white;
+  font-size: 1.7vw;
+  font-family: 'Regular';
+  letter-spacing: 1px;
+  margin-top: 1vw;
+  width: 100%;
+}
+
+.about p {
+  font-family: 'Regular';
+  color: white;
+  font-size: 1.1vw;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+/*--------- FAQ ----------*/
+.faq{
+  display:flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  margin-top: 5%;
+  text-align: left;
+}
+
+.faq h1 {
+  color: white;
+  font-size: 2vw;
+  font-family: 'Regular';
+  margin: 0;
+}
+
+.faq h2 {
+  color: white;
+  font-size: 1.3vw;
+  font-family: 'Regular';
+  width: 100%;
+  margin: 0;
+}
+
+.faq p {
+  font-family: 'Regular';
+  width: 100%;
+  font-size: 1.1vw;
+  color: white;
+  margin-top: 1px;
+}
+
+.faq .colored {
+  font-family: 'Bold';
+}
+
+/*--------- MENU ----------*/
+.beer {
+  width: 100%; 
+  height: 100%;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.beer h1 {
+  color: white;
+  font-size: 2vw;
+  font-family: 'Regular';
+  margin: 0;
+}
+
+/*--------- WORK ----------*/
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 80vh;
+}
+
+.work h1 {
+  color: white;
+  font-size: 3vw;
+  font-family: 'Regular';
+}
+
+.work p {
+  font-size: 1.1vw;
+  font-family: 'Regular';
+  color: white;
+}
+
+#arbetaForm {
+  width: 100%;
+  height: 50%;
+}
+
+/*--------- BOOKING ----------*/
+.bContent {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding-bottom: 2vh;
 }
 
-
-.content h1, h2 {
-  font-family: Mulish;
-  font-weight: bold;
+.bContent h1, h2 {
+  font-family: 'Regular';
   color: white;
-  padding: 1vw;
-  text-align: center;
-  font-size: 4vw;
+  font-size: 2vw;
 }
 
-.content li {
+.bContent p {
+  font-family: 'Regular';
+  color: white;
+  width: 80%;
+  font-size: 1.1vw;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.bContent li {
   margin-bottom: 10px;
 }
 
-div .welcomeContainer{
+div .calendar {
+  width: 70vw;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+.confirmBookings{
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  justify-content: center;
+}
+
+.bookingsTable {
+  flex-wrap: wrap;
+  font-family: 'Regular';
+  border-collapse: collapse;
+  color: white;
+  text-align: left;
+  vertical-align: middle;
+  opacity: 0.9;
+  margin: 0 auto;
+  margin-bottom: 3vh;
+  height: 20%;
+  width: 100%;
+}
+
+.bookingsTable td, th {
+  font-family:  'Regular';
+  border-bottom: 1px solid white;
+  padding: 8px;
+  max-width: 10vw;
+  overflow: auto;
+}
+
+/* Hide scrollbar on checkbox */
+.bookingsTable :nth-child(6) {
+  overflow: hidden;
+}
+
+.bookingsTable thead th {
+  width: 25%;
+}
+
+.bookingsTable h3 {
+  font-family: 'Regular';
+  color: white;
+}
+
+.BoxInfo {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
   align-items: center;
 }
 
-div .welcome {
+.BoxInfo p {
+  width: 50px;
+  height: 40px;
+  margin: 0 0 0 20px; 
+  border-radius: 2px;
+  color: white;
+}
+
+/*.BoxInfo h3{
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1vw;
+  margin-left: 7px;
+  letter-spacing: 0.5px;
+}
+
+.BookedBoxPub {
+  background-color: #1a7525c8;
+  opacity: 0.8;
+  border: 1px solid black;
+}
+
+.BookedBoxIndivid {
+  background-color: rgb(0, 255, 89);
+  opacity: 0.8;
+  border: 1px solid black;
+}
+
+.Free {
+  background-color: #d8dad7;
+  border: 1px solid black;
+}*/
+
+/*--------- CONTACT ----------*/
+.contact {
   display: flex;
-  margin-top: 16%;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  width: 90%;
+  height: 100%;
 }
 
-div .welcome h1, p {
-  margin:0;
-  color: #FFF;
+.contact h1 {
+  color: white;
+  font-size: 2vw;
+  font-family: 'Regular';
 }
 
-div .welcome h1 {
-  font-size: 8vw;
-  align-self: flex-end;
+.contact h3, a{
+  color: white;
+  font-size: 1.2vw;
+  font-family: 'Regular';
+  margin: 0;
+  transition: 0.3s all;
 }
 
-div .welcome p {
-  font-family: 'Gill Sans';
-  font-style: italic;
+.contact a:hover {
+  color: #20b479;
+  letter-spacing: 2px;
+  transition: 0.3s all;
+}
+
+.fIcon {
+  width: 6vw;
+  height: 6vw;
+  margin-right: 5vw;
+  transition: 0.2s all;
+}
+
+.iIcon {
+  width: 6vw;
+  height: 6vw;
+  transition: 0.2s all;
+}
+
+.fIcon:hover, .iIcon:hover {
+  color: #20b479;
+  height: 6.5vw;
+  width: 6.5vw;
+  transition: 0.2s all;
+}
+
+/*--------- FOOTER ----------*/
+.fotnot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
   font-weight: lighter;
-  font-size: 1.5vw;
-  align-self: flex-end;
 }
 
-#arrow {
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+.footer h4 {
+  color:rgb(51, 69, 71);
+  font-family: 'Regular';
+  font-size: 10px;
+  float: left;
 }
 
-div .about{
-  background: rgb(0,24,15);
-  background: linear-gradient(160deg, rgb(0, 15, 10) 0%, rgb(13, 61, 51) 100%, rgba(23, 50, 46, 0.964) 100%);
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1.5;
+.loginSymbol{
+  float: right;
+  cursor: pointer;
 }
 
+/*--------- POP-UPS ----------*/
+.popupButton {
+  background: white;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.popupButton:hover{
+  background: #1f3d0c;
+  transition: 0.3s all;
+}
+
+input[type="button"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+/*--------- TO BE CHANGED ----------*/
+/*
 .pubInfo ul {
   display: flex;
   flex-direction: column;
   list-style-type: none; 
-  padding: 10px;
   }
 
 .pubInfo li {
   padding: 2%;
-  width: 100%;  
+  width: 20vw;  
 }
 
 .clicker {
-  --fill-color: #125446;
-  position: relative;
+  --fill-color: #b15000de;
   display: block;
-  padding: 10px;
-  margin: 10px;
-  font: 700 7.5vw Raleway, sans-serif;
+  font: 600 5.5vw Raleway, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-text-stroke: var(--fill-color);
   text-align: left;
   background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
-  color: #DB8C7B;
+  color: black;
   transition: 0.3s linear;
   cursor: pointer;
-  border: 1px solid #DB8C7B;  
-  width: 96.85vw;
+  border: 1px solid black;  
+  width: 100%;
 }
 
 .clicker:hover {
-  background-size: 100%;
+  background-size: 60vw;
 }
 
 .hiddendiv{
   align-content: center;
-  max-width: 97%;
+  max-width: 55vw;
   background-color:#EBD2CD;
   padding: 3vh 0;
   padding-left: 1%;
@@ -217,20 +536,14 @@ div .about{
 }
 
 .hiddendiv p {
-  font-size: 3vh;
+  font-size: 2vh;
   color: #112221;
   width: 100%;
 }
 
-div .calendar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 9vh;
-}
 
 .hiddendiv2 {
-  width: 98%;
+  width: 55vw;
   background-color:#EBD2CD;
   padding: 1.5vh 0;
   text-align: center;
@@ -238,7 +551,7 @@ div .calendar {
 }
 
 #styret {
-  width: 70%;
+  width: 50vw;
   align-self: center;
   border: 5px solid #125446;
 }
@@ -275,221 +588,167 @@ div .calendar {
   padding: 1%;
   margin: 10px;
 }
+*/
 
-#arbetaForm {
-  border: 5px solid #125446;
-  width: 99.2%;
-  height: 75vh;
-}
-
-#beer h2 {
-  padding-top: 20vh;
-  font-size: 2vh;
-  padding-bottom: 18vh;
-}
-
-.confirmBookings{
-  width: 90%;
-  height: 100%;
-  text-align: center;
-  overflow: auto;
-  justify-content: center;
-}
-
-.bookingsTable {
-  flex-wrap: wrap;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border-collapse: collapse;
-  text-align: left;
-  vertical-align: middle;
-  background-color: bisque;
-  opacity: 0.9;
-  margin: 0 auto;
-  margin-bottom: 3vh;
-  height: 20%;
-  width: 100%;
-}
-
-.bookingsTable td, th {
-  font-family: Mulish;
-  border-bottom: 1px solid white;
-  padding: 8px;
-  max-width: 10vw;
-  overflow: auto;
-}
-
-/* Hide scrollbar on checkbox */
-.bookingsTable :nth-child(6) {
-  overflow: hidden;
-}
-
-.bookingsTable thead th {
-  width: 25%;
-}
-
-.bookingsTable h3 {
-  font-family: Mulish;
-  font-weight: bold;
-  color: white;
-}
-
-.BoxInfo {
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  align-items: center;
-}
-
-.BoxInfo p {
-  width: 50px;
-  height: 40px;
-  margin: 0 0 0 20px; 
-  border-radius: 2px;
-}
-
-.BoxInfo h3{
-  color: white;
-  font-size: larger;
-  margin-left: 7px;
-  letter-spacing: 0.5px;
-}
-
-.BookedBoxPub {
-  background-color: #DB8C7B;
-}
-
-.BookedBoxIndivid {
-  background-color: burlywood;
-}
-
-.Free {
-  background-color: #EBD2CD;
-}
-
-.footer {
-  background-color: #125446;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 12vh;
-  padding-top: 10px;
-  text-align: center;
-  font-family: 'Mulish', regular;
-  font-size: 15px;
-  font-weight: lighter;
-}
-
-.footer h4, h1 {
-  color: white;
-  margin: 10px;
-}
-
-.footer a {
-  color: #DB8C7B;
-}
-
-.footer .socialSymbol svg  {
-  padding-bottom: 5px;
-  padding-right: 10px;
-}
-
-.footer .loginSymbol svg {
-  padding-right: 10px;
-  position: absolute;
-  right:0;
-  cursor: pointer;
-}
-
-.contentCalender .footer {
-  position: fixed;
-}
-
-.popupButton {
-  background: orange;
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  margin-top: 5px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: 100;
-}
-
-.popupButton:hover{
-  background: #bf1650;
-  transition: 0.3s all;
-}
-
-input[type="button"]:active {
-  transition: 0.3s all;
-  transform: translateY(3px);
-  border: 1px solid transparent;
-  opacity: 0.8;
-}
-
+/*--------- MOBILE ----------*/
 
 @media only screen and (max-width: 1000px) {
-
-  /* Menu items */
-  .header ul li {
-    font-size: 4vw;
+  /*--------- BODY ----------*/
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
   }
 
-  /* Logo */
-  .header .logo{
-    height: 60px;
+  .title {
+    margin-top: 2.5%;
   }
 
-  .header :nth-child(2) {
-    margin-right: 30%;
-    width: 0vw;
-    padding: 0vw;
+  .bg {
+    height: 100%;
+    width: 300%;
+    margin-left: -100%;
+  }
+  
+  /*--------- HEADER ----------*/
+  .header {
+    width: 100%;
+    height: 8%;
+    margin-top: -10%;
+    margin-left: 1.5%;
+    margin-bottom: 0;
+    position: relative;
   }
 
-  .content {
-    padding-bottom: 10vh;
+  .header ul, li {
+    display: inline-flex;
+    width: 100%;
+    padding: 0;
   }
 
-  #arrow{
-    padding-bottom: 30vh;
+  .header ul li a {
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-left: 5%;
+    font-size: 2vw;
   }
 
-  .content h1 {
+  /*--------- CONTENT ----------*/
+  .headerContent {
+    width: 100%;
+    margin-top: 5%;
+    margin-left: 1.5%;
+    z-index: 1;
+  }
+
+  /*--------- HOME ----------*/
+  .home {
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+  }
+
+  .home h1 {
     font-size: 10vw;
   }
 
-  div .welcome {
-    margin-top: 25vh;
+  .home h2 {
+    font-size: 2vw;
+    margin-bottom: 5%;
   }
 
-  div .welcome h1 {
-    font-size: 13vw;
+  .home p {
+    margin-top: 80%;
+    font-size: 2.2vw;
+    letter-spacing: 7px;
   }
 
-  div .welcome p {
-    font-size: 4vw;
-  }
-  
-  .styret {
-    min-height: 40vh;
-    justify-content: center;
+  /*--------- ABOUT ----------*/
+  .about {
+    width: 90%;
+    margin-top: 5%;
   }
 
-  .styret img {
-    width: 80vw;
-    border-radius: 1vw 1vw 1vw;
+  .about h1 {
+    font-size: 4.2vw;
+    margin-bottom: 5%;
   }
 
-  div .about p{
-    font-size: 4vw;
+  .about h2{
+    font-size: 3.2vw;
+    margin-bottom: 1%;
   }
 
-  div .about h1 {
+  .about p {
+    font-size: 2.2vw;
+    margin-bottom: 3%;
+  }
+
+  /*--------- FAQ ----------*/
+  .faq {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .faq h1 {
+    font-size: 4.2vw;
+    margin-bottom: 2%;
+  }
+
+  .faq h2{
+    font-size: 3.2vw;
+    margin-bottom: 0%;
+  }
+
+  .faq p {
+    font-size: 2.2vw;
+    margin-bottom: 1%;
+  }
+
+  /*--------- BEER ----------*/
+  .beer {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .beer h1 {
     font-size: 5vw;
+    margin-bottom: 5%;
   }
 
-  div .about h2 {
+  /*--------- WORK ----------*/
+  .work {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .work h1 {
     font-size: 5vw;
+    margin-bottom: 5%;
+  }
+
+  .work p {
+    font-size: 2.2vw;
+    margin-bottom: 3%;
+  }
+
+  #arbetaForm {
+    width: 90%;
+    margin-top: 5%;
+    height: 75%;
+  }
+
+  /*--------- BOOKINGS ----------*/
+  .bContent h1 {
+    font-size: 5vw;
+    margin-bottom: 5%;
+  }
+
+  .bContent p {
+    font-size: 2.3vw;
+    margin-bottom: 3%;
   }
 
   .bookingsTable td, th{
@@ -509,19 +768,65 @@ input[type="button"]:active {
     max-width:80%;
     overflow: hidden;
     font-size: 2vw;
-  
   }
 
-  .footer {
-    height: 13vh;
-  }
-
-  .footer h1 {
-    font-size: 2vh;
-  }
-  
   div .calendar{
     padding-bottom: 0vh;
   }
 
+  /*--------- CONTACT ----------*/
+  .contact {
+    width: 90%;
+    margin-top: 5%;
+  }
+
+  .contact h1 {
+    font-size: 5vw;
+    margin-bottom: 5%;
+  }
+
+  .contact h3, a{
+    font-size: 3.2vw;
+    margin-bottom: 1%;
+  }
+
+  .fIcon {
+    width: 25vw;
+    height: 25vw;
+    transition: 0.2s all;
+  }
+
+  .fIcon:hover {
+    width: 27vw;
+    height: 27vw;
+    transition: 0.2s all;
+  }
+
+  .iIcon{
+    width: 25vw;
+    height: 25vw;
+    transition: 0.2s all;
+  }
+
+  .iIcon:hover {
+    width: 27vw;
+    height: 27vw;
+    transition: 0.2s all;
+  }
+
+  /*--------- FOOTER ----------*/
+  .footer {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .footer h4 {
+    font-size: 1vh;
+    margin-left: -5%;
+  }
+
+  .loginSymbol{
+    cursor: pointer;
+    margin-left: 80%;
+  }
 }
