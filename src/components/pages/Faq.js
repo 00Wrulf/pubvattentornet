@@ -53,7 +53,7 @@ class Faq extends Component {
         <p>- Priset beror väldigt mycket på <span className='colored'>vad du beställer</span>! Vi har ett brett sortiment av öl, cider, vin, och alkoholfria drycker samt mat och snacks.</p>
         <br />
         <h2>Boka?</h2>
-        <p>- För att boka gör du en bokningsförfrågan via <span className='colored'>boka</span> sidan. Du får sedan ett mail med bekräftelse när din förfrågan är godkänd!</p>
+        <p>- För att boka gör du en bokningsförfrågan via <span className='colored'>Hyresbostäder</span>.</p>
         <br />
         <h2>Betala?</h2>
         <p>- Vi tar <span className='colored'>endast</span> kortbetalning, dvs inga kontanter och ingen swish!</p>
@@ -63,6 +63,7 @@ class Faq extends Component {
         <br />
         <h2>Kontakt?</h2>
         <p>- Du kan hitta all kontaktinformation på vår <span className='colored'>kontakt</span> sida.</p>
+
       </div>
     )
   }

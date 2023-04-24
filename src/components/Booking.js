@@ -1,76 +1,77 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Calendar from 'react-calendar'
-import isSameDay from 'date-fns/isSameDay'
-import differenceInMonths from 'date-fns/differenceInMonths'
-import format from 'date-fns/format'
-import Popup from 'reactjs-popup'
-import CreateBookingRequest from './popups/CreateBookingRequest'
+import React from 'react'
+// import Calendar from 'react-calendar'
+// import isSameDay from 'date-fns/isSameDay'
+// import differenceInMonths from 'date-fns/differenceInMonths'
+// import format from 'date-fns/format'
+// import Popup from 'reactjs-popup'
+// import CreateBookingRequest from './popups/CreateBookingRequest'
 import ShowBookingRequests from './ShowBookingRequests'
-import VattentornetDataService from '../services/vattentornet.service'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollection } from 'react-firebase-hooks/firestore'
+// import VattentornetDataService from '../services/vattentornet.service'
+// import { useAuthState } from 'react-firebase-hooks/auth'
+// import { useCollection } from 'react-firebase-hooks/firestore'
 import 'reactjs-popup/dist/index.css'
 import '../styles/calendar.css'
 import '../styles/popup.css'
 
 function Booking () {
   // Array för alla bekräftade bokningar. Ska populera kalendern.
-  const confirmedBookingsArray = []
+  // const confirmedBookingsArray = []
 
   // Kollar om admin är inloggad, stöd för loading och error handling finns men används ej just nu.
-  const [user] = useAuthState(VattentornetDataService.auth)
+  // const [user] = useAuthState(VattentornetDataService.auth)
 
   // Hooks-functionen useRef() används för att ha koll på om det är första ggn sidan laddas
   // samt status på om popupfönster är öppet eller stängt. Se https://react-popup.elazizi.com/controlled-popup
-  const bookingPopup = useRef()
-  const openBookingPopup = () => bookingPopup.current.open()
+  // const bookingPopup = useRef()
+  // const openBookingPopup = () => bookingPopup.current.open()
 
   // Functionalitet för att stänga popupfönstret
-  const closePopup = React.useCallback(() => {
-    bookingPopup.current.close()
-  }, [])
+  // const closePopup = React.useCallback(() => {
+  //  bookingPopup.current.close()
+  // }, [])
 
   // React hooks med variabler och setters.
-  const [date, setDate] = useState(new Date())
-  const [confirmedBookings, loadingConfirmedBookings] = useCollection(VattentornetDataService.getBookings().where('confirmed', '==', true).orderBy('date'))
+  // const [date, setDate] = useState(new Date())
+  // const [confirmedBookings, loadingConfirmedBookings] = useCollection(VattentornetDataService.getBookings().where('confirmed', '==', true).orderBy('date'))
 
   // Setter för datumvärden
-  function onChange (nextDate) {
-    setDate(nextDate)
-  }
+  // function onChange (nextDate) {
+  //  setDate(nextDate)
+  // }
 
   // Funktion för att markera redan bokade datum i kalendern.
   // Jämför varje kalenderdatum med bokningsdatum från databasen
   // Ger vid träff den rutan ett klassnamn som kan nås via CSS.
-  function markBookedDates ({ date }) {
-    if (confirmedBookingsArray.find(e => isSameDay(e.date, date))) {
-      return 'dateIsBooked'
-    }
-  }
+  // function markBookedDates ({ date }) {
+  //   if (confirmedBookingsArray.find(e => isSameDay(e.date, date))) {
+  //     return 'dateIsBooked'
+  //   }
+  // }
 
-  // Öppnar bokningsrutan för valt datum. useRef() används för att förhindra att denna körs vid första
-  // renderingen för dagens datum pga bugg med hur react-big-calendar renderar. Se https://nikolamargit.dev/skip-useeffect-hook-on-first-render/
-  const firstRender = useRef(true)
+  // // Öppnar bokningsrutan för valt datum. useRef() används för att förhindra att denna körs vid första
+  // // renderingen för dagens datum pga bugg med hur react-big-calendar renderar. Se https://nikolamargit.dev/skip-useeffect-hook-on-first-render/
+  // const firstRender = useRef(true)
 
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false
-      return
-    }
-    openBookingPopup()
-  }, [date])
+  // useEffect(() => {
+  //   if (firstRender.current) {
+  //     firstRender.current = false
+  //     return
+  //   }
+  //   openBookingPopup()
+  // }, [date])
 
-  function tileDisabled ({ date }) {
-    if ((!isSameDay(Date.now(), date)) && (date < Date.now())) return date // Avaktivera bokningar för datum innan idag men inte idag
-    if (date.getDay() === 4 || date.getDay() === 5) return date // Avaktivera bokningar för torsdagar och fredagar pga puben är öppen
-    if (differenceInMonths(date, Date.now()) > 3) return date // Avaktivera bokningar längre än 3 månader fram i tiden
-    if (confirmedBookingsArray.find(e => isSameDay(e.date, date))) return date
-    if (date.getMonth() === 0) return date
-  }
+  // function tileDisabled ({ date }) {
+  //   if ((!isSameDay(Date.now(), date)) && (date < Date.now())) return date // Avaktivera bokningar för datum innan idag men inte idag
+  //   if (date.getDay() === 4 || date.getDay() === 5) return date // Avaktivera bokningar för torsdagar och fredagar pga puben är öppen
+  //   if (differenceInMonths(date, Date.now()) > 3) return date // Avaktivera bokningar längre än 3 månader fram i tiden
+  //   if (confirmedBookingsArray.find(e => isSameDay(e.date, date))) return date
+  //   if (date.getMonth() === 0) return date
+  // }
 
   return (
     <div className='bContent'>
 
+      {/*
       {
         // Ladda bekräftade bokningar och sätt in i array
         !loadingConfirmedBookings &&
@@ -87,7 +88,7 @@ function Booking () {
         }
         )
       }
-      {/* Popup som aktiveras när ett datum klickas på i calender. */}
+      { Popup som aktiveras när ett datum klickas på i calender. }
       <Popup ref={bookingPopup}>
         <CreateBookingRequest clickedDate={format(date, 'yyyy-MM-dd')} closePopup={closePopup} />
       </Popup>
@@ -102,8 +103,13 @@ function Booking () {
           tileDisabled={tileDisabled}
         />
       </div>
+      */}
 
-      {<p>Bokning av allrummet är endast till för boende i vattentornet (Går att lösa för t.ex föreningar i specialfall, kontakta oss för mer info).
+      <h1>Bokning</h1>
+
+      <p>Bokning av allrumet sker nu för tiden via "mina sidor" på hyresbostäders hemsida</p>
+
+      <p>Bokning av allrummet är endast till för boende i vattentornet (Går att lösa för t.ex föreningar i specialfall, kontakta oss för mer info).
         För att boka allrummet behöver vi ditt lägenhetsnummer i tornet samt en beskrivning av vad lokalerna skall användas till.
         De regler som gäller för lokalerna är väldigt enkla.
         Ni ser till att allting går lugnt till, samt ser till att lokalerna är nystädade senaste klockan 12 dagen efter.
@@ -112,10 +118,10 @@ function Booking () {
         Om någonting går sönder är ni ersättningsskyldiga.
         Är städningen inte ordentligt utförd inom sagda tider tar vi ut en avgift för att själva utföra denna.
         Sopkvast och mopp finns i allrummets städskåp. Städskåpet finns i hörnet mot puben.
-       </p>}
+      </p>
 
       {/* Om inloggad som admin, rendera bokningshanterare */}
-      {user && <ShowBookingRequests confirmedBookings={confirmedBookings} />}
+      {/* user && <ShowBookingRequests confirmedBookings={confirmedBookings} /> */}
 
       {/* <div className='BoxInfo'>
         <p className='BookedBoxPub' />

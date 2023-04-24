@@ -22,7 +22,7 @@ class About extends Component {
           <br />
             I puben går ett 30-tal personer in om man nyttjar samtliga bord/stolar samt ståytor. Skulle inte detta räcka så får man ta till
             allrumsdelen där ytterligare ett 40-tal personer får plats.
-            Våra fantastiska lokaler går alldeles utmärkt att boka! Du kan läsa mer om detta under fliken "Boka", samt skicka en bokningsförfrågan på ditt valda datum!
+            Våra fantastiska lokaler går alldeles utmärkt att boka! Du kan läsa mer om detta under fliken "Boka".
         </p>
 
         <h2>Utlåning för Boende</h2>
