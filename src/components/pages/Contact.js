@@ -10,7 +10,7 @@ class Contact extends Component {
         <br />
         <p />
         <br />
-        <h3>Ordförande: <a href='mailto: anna@vattentor.net'>anna@vattentor.net</a></h3>
+        <h3>Ordförande: <a href='mailto: ordforande@vattentor.net'>ordforande@vattentor.net</a></h3>
         <h3>Event: <a href='mailto: event@vattentor.net'>event@vattentor.net</a></h3>
         <h3>Kassör: <a href='mailto: kassor@vattentor.net'>kassor@vattentor.net</a></h3>
         <h3>Inköp: <a href='mailto: inkop@vattentor.net'>inkop@vattentor.net</a></h3>
