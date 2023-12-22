@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 const Menu = () => {
+
     const [menuItems, setMenuItems] = useState([]);
 
     useEffect(() => {
         // Fetch data from the API
-        fetch('http://localhost:8080/menu')
+        fetch(process.env.REACT_APP_MENU_API_URL)
             .then((response) => response.json())
             .then((data) => setMenuItems(data))
             .catch((error) => console.error('Error fetching menu:', error));
