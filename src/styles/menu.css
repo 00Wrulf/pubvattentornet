@@ -111,3 +111,18 @@
   margin: 0;
   padding: 0;
 }
+
+.loadingSpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 25vh;
+}
+
+.spinner_aj0A{
+  transform-origin:center;
+  fill: white;
+  animation:spinner_KYSC .75s infinite linear
+}
+@keyframes spinner_KYSC{100%{transform:rotate(360deg)}}
