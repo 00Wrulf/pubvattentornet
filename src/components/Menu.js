@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/menu.css'
-import Spinner from '../images/Spinner.gif'
 
 const Menu = () => {
 
