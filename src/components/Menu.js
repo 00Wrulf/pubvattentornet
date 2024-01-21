@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../styles/menu.css'
 
 const Menu = () => {
 
@@ -28,21 +29,19 @@ const Menu = () => {
     });
 
     return (
-        <div>
+        <div className='menu'>
             <h1>Menu</h1>
             {Object.keys(organizedMenu).map((category) => (
                 <div key={category}>
                     <h2>{category}</h2>
-                    <ul>
+                    <ul className='menuList'>
                         {organizedMenu[category].map((item) => (
-                            <li key={item.uuid}>
-                                <div>
-                                    <h3>{item.name}</h3>
-                                    <p>Price: {item.variants[0].price.amount / 100} SEK</p>
+                            <li className='menuListItem' key={item.uuid}>
+                                <div className='menuImageContainer'>
+                                    <img src={item.presentation.imageUrl} alt={item.name} />
                                 </div>
-                                <div>
-                                    <img src={item.presentation.imageUrl} alt={item.name} style={{ width: 'auto', height: '100px' }} />
-                                </div>
+                                <h3>{item.name}</h3>
+                                <p>{item.variants[0].price.amount / 100} kr</p>
                             </li>
                         ))}
                     </ul>
