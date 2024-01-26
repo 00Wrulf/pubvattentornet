@@ -18,10 +18,18 @@ const Menu = () => {
             .catch((error) => console.error('Error fetching menu:', error));
     }, []);
 
+    // Replaces image with generic sample when image load fails
+    const handleImageError = ((e) => {
+        e.target.onError = null; //prevent looping
+        e.target.src = beer;
+        e.target.alt = "Generic beer can";
+        e.target.style.filter = "invert(1)"
+    });
+
     // Organize and sort menu items by category in specified order
     const nonAlcoholic = "Alkoholfritt";
     const acceptedValues = ["0.0%", "0.1%", "0.2%", "0.3%", "0.4%", "0.5%"];
-    const categoryOrder = ["Lager", "Suröl", "Fruktöl", "Cider", "Ale", "Pale Ale", "IPA", "Belgiskt", "Stout", "Special", "Alkoholfritt", "Läsk", "Mat"];
+    const categoryOrder = ["Fatöl", "Lager", "Suröl", "Fruktöl", "Cider", "Ale", "Pale Ale", "IPA", "Belgiskt", "Stout", "Special", "Alkoholfritt", "Läsk", "Mat"];
 
     const organizedMenu = {};
     categoryOrder.forEach((category) => {
@@ -62,13 +70,10 @@ const Menu = () => {
                         {organizedMenu[category].map((item) => (
                             <li className='menuListItem' key={item.uuid}>
                                 <div className='menuImageContainer'>
-                                    {
-                                        item.presentation.imageUrl ? (
-                                            <img src={item.presentation.imageUrl} alt={item.name} />
-                                        ) : (
-                                            <img src={beer} alt="Generic beer can" style={{filter: 'invert(1)'}}/> // Sample image in case image is missing
-                                        )
-                                    }
+                                    <img 
+                                    src={item.presentation.imageUrl} 
+                                    onError={handleImageError}
+                                    alt={item.name} />
                                 </div>
                                 <h3>{item.name}</h3>
                                 <p>{item.variants[0].price.amount / 100} kr</p>
