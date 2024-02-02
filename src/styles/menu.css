@@ -89,8 +89,16 @@
 
 .menuListItem div {
   width: 48px;
+  height: 48px;
   margin: 0;
   padding: 0;
+}
+
+.menuListItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
 }
 
 .menuListItem h3 {

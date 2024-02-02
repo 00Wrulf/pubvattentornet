@@ -73,7 +73,8 @@ const Menu = () => {
                                     <img 
                                     src={item.presentation.imageUrl} 
                                     onError={handleImageError}
-                                    alt={item.name} />
+                                    alt={item.name}
+                                    loading='lazy' />
                                 </div>
                                 <h3>{item.name}</h3>
                                 <p>{item.variants[0].price.amount / 100} kr</p>
