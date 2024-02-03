@@ -29,7 +29,7 @@ const Menu = () => {
     // Organize and sort menu items by category in specified order
     const nonAlcoholic = "Alkoholfritt";
     const acceptedValues = ["0.0%", "0.1%", "0.2%", "0.3%", "0.4%", "0.5%"];
-    const categoryOrder = ["Fatöl", "Lager", "Suröl", "Fruktöl", "Cider", "Ale", "Pale Ale", "IPA", "Belgiskt", "Stout", "Special", "Alkoholfritt", "Läsk", "Mat"];
+    const categoryOrder = ["Fatöl", "Lager", "Suröl", "Fruktöl", "Cider", "Ale", "Pale Ale", "IPA", "Belgiskt", "Veteöl", "Stout", "Special", "Alkoholfritt", "Läsk", "Mat"];
 
     const organizedMenu = {};
     categoryOrder.forEach((category) => {
