@@ -243,12 +243,13 @@ h1, h2, h3, p, ul, li {
   margin-top: 5%;
 }
 
+/*
 .beer h1 {
   color: white;
   font-size: 2vw;
   font-family: 'Satoshi', sans-serif;
   margin: 0;
-}
+}*/
 
 /*--------- WORK ----------*/
 .work {
@@ -710,10 +711,10 @@ input[type="button"]:active {
     margin-top: 5%;
   }
 
-  .beer h1 {
+  /*.beer h1 {
     font-size: 5vw;
     margin-bottom: 5%;
-  }
+  }*/
 
   /*--------- WORK ----------*/
   .work {
